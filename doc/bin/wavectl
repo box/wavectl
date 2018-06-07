@@ -1,0 +1,52 @@
+#!/usr/bin/env python
+
+# A light wrapper around the actual wavectl command. It uses the mock test
+# resources. This is called from documentation source files during compile time.
+# The output of this script gets inserted into code snippets in the generated
+# documentation.
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+import os
+import sys
+fileDir = os.path.dirname(os.path.abspath(__file__))
+rootDir = os.path.realpath(os.path.join(fileDir, "..", ".."))
+testDir = os.path.join(rootDir, "test")
+sys.path.insert(0, rootDir)
+sys.path.insert(0, testDir)
+os.chdir(testDir)
+
+import argparse
+import wavectl
+import test.util
+
+import six
+if six.PY3:
+    import unittest.mock as mock
+else:
+    import mock
+
+import webbrowser
+
+
+def main():
+
+    testAlerts = test.util.TestAlerts.Alert.getTestAlerts()
+    testDashboards = test.util.TestDashboards.Dashboard.getTestDashboards()
+    test.util.mockRsrcType(wavectl.Alert.Alert, testAlerts, [])
+    test.util.mockRsrcType(wavectl.Dashboard.Dashboard, testDashboards, [])
+
+    # Overwrite the webbrowser open functions. During documentation generation
+    # we do not want to launch a browser
+    m = mock.Mock()
+    webbrowser.open_new = m
+    webbrowser.open_new_tab = m
+
+    # Consume the command name and pass down the command line args
+    wf = wavectl.Wavectl(designForTestArgv=sys.argv[1:])
+    wf.runCmd()
+
+
+if __name__ == "__main__":
+    main()

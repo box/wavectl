@@ -1,0 +1,73 @@
+
+defaults: &defaults
+  # This is the directory where circle ci checks out the repo.
+  working_directory: /home/circleci/project
+
+dockerhub_creds: &dockerhub_creds
+  auth:
+    username: ahakanbaba
+    password: $DOCKERHUB_PASSWORD
+
+container_env: &container_env
+     docker:
+       # TODO: Once we are ready to opensource this and to move github.com/box,
+       # start using boxinc's public images on hub.docker
+       - image: ahakanbaba/wavectl:centos7
+         <<: *dockerhub_creds
+
+version: 2
+jobs:
+   "python2":
+     <<: *defaults
+     <<: *container_env
+     steps:
+       - checkout
+       - run:
+           name: make check
+           command: >
+              git submodule update --init --force
+              && pip install virtualenv
+              && virtualenv -p $(which python2.7) venv
+              && source venv/bin/activate
+              && pip install -r requirements.txt
+              && make -C test check
+              && mkdir -p ~/.wavectl
+              && printf '{"apiToken":"%s","wavefrontHost":"%s"}\n' "98jsb6ef-3939-kk88-8jv2-f84knf71vq68" "https://acme.wavefront.com" > ~/.wavectl/config
+              && make -C doc/sphinx all
+
+   "python3":
+     <<: *defaults
+     <<: *container_env
+     steps:
+       - checkout
+       - run:
+           name: make check
+           command: >
+              git submodule update --init --force
+              && pip install virtualenv
+              && virtualenv -p $(which python3.6) venv
+              && source venv/bin/activate
+              && pip install -r requirements.txt
+              && make -C test check
+              && mkdir -p ~/.wavectl
+              && printf '{"apiToken":"%s","wavefrontHost":"%s"}\n' "98jsb6ef-3939-kk88-8jv2-f84knf71vq68" "https://acme.wavefront.com" > ~/.wavectl/config
+              && make -C doc/sphinx all
+
+   "allpass":
+     docker:
+       - image: ubuntu:14.04
+     steps:
+       - checkout
+       - run: echo allpass
+
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - "python2"
+      - "python3"
+      - allpass:
+          requires:
+            - "python2"
+            - "python3"
+

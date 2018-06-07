@@ -1,0 +1,743 @@
+[
+    {
+        "activeMaintenanceWindows": [],
+        "additionalInformation": "This alert tracks the used network bandwidth percentage for all the compute-* (compute-master and compute-node) machines. If the cpu utilization exceeds 80%, this alert fires.",
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "ts(proc.net.percent,server_type=\"compute-*\" and env=\"live\") > 80",
+        "conditionQBEnabled": false,
+        "createUserId": "hbaba@box.com",
+        "created": 1523082347619,
+        "createdEpochMillis": 1523082347619,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "ts(proc.net.percent,server_type=\"compute-*\" and env=\"live\")",
+        "displayExpressionQBEnabled": false,
+        "failingHostLabelPairs": [],
+        "hostsUsed": [
+            "compute-node6001",
+            "compute-node6004",
+            "compute-node6005",
+            "compute-etcd6003",
+            "compute-master2004",
+            "compute-master2003"
+        ],
+        "id": "1523082347619",
+        "inMaintenanceHostLabelPairs": [],
+        "inTrash": false,
+        "lastProcessedMillis": 1523082296336,
+        "metricsUsed": [
+            "proc.net.percent"
+        ],
+        "minutes": 2,
+        "name": "Kubernetes - Node Network Utilization - HIGH (Prod)",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "resolveAfterMinutes": 2,
+        "severity": "WARN",
+        "sortAttr": -170,
+        "status": [
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": [
+                "kubernetes",
+                "skynet"
+            ]
+        },
+        "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1523082347619,
+        "updatedEpochMillis": 1523082347619,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "activeMaintenanceWindows": [],
+        "additionalInformation": "This alert tracks the used cpu percentage for all the compute-* (compute-master and compute-node) machines. If the cpu utilization exceeds 80%, this alert fires.",
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "ts(proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"live\") > 80",
+        "conditionQBEnabled": false,
+        "createUserId": "hbaba@box.com",
+        "created": 1523082347824,
+        "createdEpochMillis": 1523082347824,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "ts(proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"dev\")",
+        "displayExpressionQBEnabled": false,
+        "event": {
+            "annotations": {
+                "created": "1475605950071",
+                "details": "<a class=\"ds-alert-link\" href=\"https://box.wavefront.com/u/HV9Cn1KzqS\">View Alert</a>\n<br />\n<strong>First Affected: </strong>compute-node2026 (proc.stat.cpu.percentage_used) [productname=PowerEdge_R420][env=live][server_type=compute-node][dc=sv2]",
+                "severity": "warn",
+                "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2",
+                "type": "alert"
+            },
+            "canClose": false,
+            "canDelete": false,
+            "creatorId": "System Event",
+            "creatorType": [
+                "SYSTEM",
+                "ALERT"
+            ],
+            "endTime": 1500605088477,
+            "hosts": [
+                "compute-node2026"
+            ],
+            "id": "1500604689002:Kubernetes - Node Cpu Utilization - HIGH (Prod)",
+            "name": "Kubernetes - Node Cpu Utilization - HIGH (Prod)",
+            "runningState": "ENDED",
+            "startTime": 1500604689002,
+            "table": "box",
+            "updaterId": "System Event"
+        },
+        "failingHostLabelPairs": [],
+        "hostsUsed": [
+            "compute-node6001",
+            "compute-node6004",
+            "compute-etcd6001",
+            "compute-etcd6002",
+            "compute-etcd6003",
+            "compute-master2004",
+            "compute-master2003"
+        ],
+        "id": "1523082347824",
+        "inMaintenanceHostLabelPairs": [],
+        "inTrash": false,
+        "lastEventTime": 1500604689002,
+        "lastNotificationMillis": 1500604689490,
+        "lastProcessedMillis": 1523082301428,
+        "metricsUsed": [
+            "proc.stat.cpu.percentage_used"
+        ],
+        "minutes": 2,
+        "name": "Kubernetes - Node Cpu Utilization - HIGH (Prod)",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "resolveAfterMinutes": 2,
+        "severity": "WARN",
+        "sortAttr": -170,
+        "status": [
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": [
+                "skynet"
+            ]
+        },
+        "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1523082347824,
+        "updatedEpochMillis": 1523082347824,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "activeMaintenanceWindows": [],
+        "additionalInformation": "This alert watches the swap usage percentage in all hosts in the production kubernetes clusters. If the swap usage increases past 10% the alert fires.",
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "ts(proc.meminfo.percentage_swapused,server_type=\"compute-*\" and env=\"live\") > 10",
+        "conditionQBEnabled": false,
+        "createUserId": "hbaba@box.com",
+        "created": 1523082348005,
+        "createdEpochMillis": 1523082348005,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "ts(proc.meminfo.percentage_swapused,server_type=\"compute-*\" and env=\"live\")",
+        "displayExpressionQBEnabled": false,
+        "event": {
+            "annotations": {
+                "created": "1475606266531",
+                "details": "<a class='ds-alert-link' href='https://box.wavefront.com/u/RtKX0k1PGH'>View Alert</a><br><strong>First Affected: </strong>compute-node2013 (proc.meminfo.percentage_swapused) [productname=PowerEdge_R420][env=live][server_type=compute-node][dc=sv2]",
+                "severity": "warn",
+                "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2",
+                "type": "alert"
+            },
+            "canClose": false,
+            "canDelete": false,
+            "creatorId": "System Event",
+            "creatorType": [
+                "SYSTEM",
+                "ALERT"
+            ],
+            "endTime": 1484939457353,
+            "hosts": [
+                "compute-node2013"
+            ],
+            "id": "1484939388909:Kubernetes - Node Memory Swap Utilization - HIGH (Prod)",
+            "name": "Kubernetes - Node Memory Swap Utilization - HIGH (Prod)",
+            "runningState": "ENDED",
+            "startTime": 1484939388909,
+            "table": "box",
+            "updaterId": "System Event"
+        },
+        "failingHostLabelPairs": [],
+        "hostsUsed": [
+            "compute-node2041",
+            "compute-node3011",
+            "compute-node3008",
+            "compute-node2039",
+            "compute-node3007",
+            "compute-node3009"
+        ],
+        "id": "1523082348005",
+        "inMaintenanceHostLabelPairs": [],
+        "inTrash": false,
+        "lastEventTime": 1484939388909,
+        "lastProcessedMillis": 1523082297325,
+        "metricsUsed": [
+            "proc.meminfo.percentage_swapused"
+        ],
+        "minutes": 2,
+        "name": "Kubernetes - Node Memory Swap Utilization - HIGH (Prod)",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "queryFailing": false,
+        "resolveAfterMinutes": 2,
+        "severity": "WARN",
+        "snoozed": -1,
+        "sortAttr": -370,
+        "status": [
+            "SNOOZED"
+        ],
+        "tags": {
+            "customerTags": [
+                "skynet"
+            ]
+        },
+        "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1523082348005,
+        "updatedEpochMillis": 1523082348005,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "activeMaintenanceWindows": [],
+        "additionalInformation": "Some Info",
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "sum(rate(ts(\"~collector.points.valid\")))<10000",
+        "conditionQBEnabled": false,
+        "createUserId": "hbaba@box.com",
+        "created": 1523082348172,
+        "createdEpochMillis": 1523082348172,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "sum(rate(ts(\"~collector.points.valid\")))",
+        "displayExpressionQBEnabled": false,
+        "event": {
+            "annotations": {
+                "created": "1433400898202",
+                "details": "<a class='ds-alert-link' href='https://box.wavefront.com/u/pLp939zrQC'>View Alert</a>",
+                "severity": "warn",
+                "target": "dmourati@box.com",
+                "type": "alert"
+            },
+            "canClose": false,
+            "canDelete": false,
+            "creatorId": "System Event",
+            "creatorType": [
+                "SYSTEM",
+                "ALERT"
+            ],
+            "endTime": 1490393525137,
+            "hosts": [
+                ""
+            ],
+            "id": "1490392285900:Wavefront Freshness",
+            "name": "Wavefront Freshness",
+            "runningState": "ENDED",
+            "startTime": 1490392285900,
+            "table": "box",
+            "updaterId": "System Event"
+        },
+        "failingHostLabelPairs": [],
+        "hostsUsed": [
+            "wavefront-proxy-346675635-80196",
+            "18b8f68d-15af-49e6-967f-ba480d6fcf93",
+            "wavefront-proxy-346675635-9j9ng",
+            "wavefront-proxy-3128578140-addis",
+            "wavefront-proxy-3128578140-cyx6n",
+            "wavefront-proxy-2192725283-p2xr7"
+        ],
+        "id": "1523082348172",
+        "inMaintenanceHostLabelPairs": [],
+        "inTrash": false,
+        "lastEventTime": 1490392285900,
+        "lastNotificationMillis": 1490392286031,
+        "lastProcessedMillis": 1523082344420,
+        "metricsUsed": [
+            "~collector.points.valid"
+        ],
+        "minutes": 5,
+        "name": "Wavefront Freshness",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "severity": "WARN",
+        "snoozed": 1447354773597,
+        "sortAttr": -170,
+        "status": [
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": []
+        },
+        "target": "dmourati@box.com",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1523082348172,
+        "updatedEpochMillis": 1523082348172,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "activeMaintenanceWindows": [],
+        "additionalInformation": "Some Info",
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "default(0, sum((default(0, sum(ts('storm.http_response_code', (http_response_code='5*') and (fq_rm='box_master*get_page' or fq_rm='box_master_quarantine' or fq_rm='box_master_quarantine_policies' or fq_rm='box_master_content' or fq_rm='box_master_group_tags' or fq_rm='box_content_workflow_policy' or fq_rm='box_content_workflow_automation' or fq_rm='box_content_metadata_*')), fq_rm, http_response_code))))) / default(0, sum((default(0, sum(ts('storm.http_response_code', (fq_rm='box_master*get_page' or fq_rm='box_master_quarantine' or fq_rm='box_master_quarantine_policies' or fq_rm='box_master_content' or fq_rm='box_master_group_tags' or fq_rm='box_content_workflow_policy' or fq_rm='box_content_workflow_automation' or fq_rm='box_content_metadata_*')), fq_rm, http_response_code))))) >= 5",
+        "conditionQBEnabled": false,
+        "createUserId": "hbaba@box.com",
+        "created": 1523082348348,
+        "createdEpochMillis": 1523082348348,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "default(0, sum((default(0, sum(ts('storm.http_response_code', (http_response_code='5*') and (fq_rm='box_master*get_page' or fq_rm='box_master_quarantine' or fq_rm='box_master_quarantine_policies' or fq_rm='box_master_content' or fq_rm='box_master_group_tags' or fq_rm='box_content_workflow_policy' or fq_rm='box_content_workflow_automation' or fq_rm='box_content_metadata_*')), fq_rm, http_response_code))))) / default(0, sum((default(0, sum(ts('storm.http_response_code', (fq_rm='box_master*get_page' or fq_rm='box_master_quarantine' or fq_rm='box_master_quarantine_policies' or fq_rm='box_master_content' or fq_rm='box_master_group_tags' or fq_rm='box_content_workflow_policy' or fq_rm='box_content_workflow_automation' or fq_rm='box_content_metadata_*')), fq_rm, http_response_code)))))",
+        "displayExpressionQBEnabled": false,
+        "failingHostLabelPairs": [],
+        "hostsUsed": [
+            "box_content_workflow_policy",
+            "box_content_metadata_get_template",
+            "box_content_metadata_get_templates"
+        ],
+        "id": "1523082348348",
+        "inMaintenanceHostLabelPairs": [],
+        "inTrash": false,
+        "lastProcessedMillis": 1523082297382,
+        "metricsUsed": [
+            "storm.http_response_code"
+        ],
+        "minutes": 5,
+        "name": "Legacy admin console 500sTODO_SOME_TEST_12432345_STRING",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "severity": "WARN",
+        "sortAttr": -170,
+        "status": [
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": [
+                "Bali"
+            ]
+        },
+        "target": "pd: 99bab06f0f934a3f93f65e228e43ad56",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1523082348348,
+        "updatedEpochMillis": 1523082348348,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "activeMaintenanceWindows": [],
+        "additionalInformation": "https://SomeHostName.net/display/ETO/SomePath",
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "ts(db.running_kernel_is_default, env=live and db_pod=*) = 0",
+        "conditionQBEnabled": false,
+        "createUserId": "hbaba@box.com",
+        "created": 1523082348512,
+        "createdEpochMillis": 1523082348512,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "",
+        "displayExpressionQBEnabled": true,
+        "displayExpressionQBSerialization": "{\"_v\":1,\"metric\":\"\",\"filters\":[[],\"and\"],\"functions\":[]}",
+        "event": {
+            "annotations": {
+                "created": "1485390198240",
+                "details": "<a class=\"ds-alert-link\" href=\"https://box.wavefront.com/u/Yw9cQS7V08\">View Alert</a>\n<br />\n<strong>First Affected: </strong>dba-mgmt6001 (db.running_kernel_is_default) [db_pod=orchestrator][db_cluster=orchestrator][productname=OpenStack_Nova][env=live][db_role=master][dc=vsv1][server_type=dba-mgmt][db_state=passive]",
+                "severity": "warn",
+                "target": "dbops+wf-warn@box.com",
+                "type": "alert"
+            },
+            "canClose": false,
+            "canDelete": false,
+            "creatorId": "System Event",
+            "creatorType": [
+                "SYSTEM",
+                "ALERT"
+            ],
+            "endTime": 1485397426825,
+            "hosts": [
+                "dba-mgmt6001",
+                "app-db1016"
+            ],
+            "id": "1485390362323:Running kernel is not the default boot kernel",
+            "name": "Running kernel is not the default boot kernel",
+            "runningState": "ENDED",
+            "startTime": 1485390362323,
+            "table": "box",
+            "updaterId": "System Event"
+        },
+        "failingHostLabelPairs": [],
+        "hostsUsed": [
+            "app-db3094",
+            "app-db3092",
+            "app-db1005",
+            "app-db1008",
+            "app-db1007",
+            "app-db1009"
+        ],
+        "id": "1523082348512",
+        "inMaintenanceHostLabelPairs": [],
+        "inTrash": false,
+        "lastEventTime": 1485390362323,
+        "lastProcessedMillis": 1523082330436,
+        "metricsUsed": [
+            "db.running_kernel_is_default"
+        ],
+        "minutes": 10,
+        "name": "MySQL Live - Running Kernel Matches Boot Kernel - FALSE",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "processRateMinutes": 1,
+        "severity": "WARN",
+        "sortAttr": -170,
+        "status": [
+            "IN_MAINTENANCE",
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": [
+                "dbops.mysql.host.kernel",
+                "env.live"
+            ]
+        },
+        "target": "dbops+wf-warn@box.com",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1523082348512,
+        "updatedEpochMillis": 1523082348512,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "activeMaintenanceWindows": [],
+        "additionalInformation": "Some Info",
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "max(ts(storm.Orion.ApiCalls.response_time)) > 2",
+        "conditionQBEnabled": false,
+        "createUserId": "hbaba@box.com",
+        "created": 1523082348708,
+        "createdEpochMillis": 1523082348708,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "max(ts(storm.Orion.ApiCalls.response_time)) > 2",
+        "displayExpressionQBEnabled": false,
+        "failingHostLabelPairs": [],
+        "id": "1523082348708",
+        "inMaintenanceHostLabelPairs": [],
+        "inTrash": false,
+        "lastProcessedMillis": 1523082313914,
+        "minutes": 5,
+        "name": "Orion Response time more than 2 seconds",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "severity": "INFO",
+        "sortAttr": -190,
+        "status": [
+            "FIRING"
+        ],
+        "tags": {
+            "customerTags": [
+                "Orion"
+            ]
+        },
+        "target": "wavefront-relay@boxcom.pagerduty.com,ent-workflow-dev@box.com",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1523082348708,
+        "updatedEpochMillis": 1523082348708,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "activeMaintenanceWindows": [],
+        "additionalInformation": "https://SomeHostName.net/display/ETO/SomePathTODO_SOME_TEST_12432345_STRING",
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "sum(ts(realtime.queuedEvents.fetches.latency.all.median, env=live) > 35000000) > 2",
+        "conditionQBEnabled": false,
+        "createUserId": "hbaba@box.com",
+        "created": 1523082348877,
+        "createdEpochMillis": 1523082348877,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "ts(realtime.queuedEvents.fetches.latency.all.median, env=live)",
+        "displayExpressionQBEnabled": false,
+        "failingHostLabelPairs": [],
+        "hostsUsed": [
+            "realtime1015",
+            "realtime1004",
+            "realtime2009",
+            "realtime2007",
+            "realtime2008"
+        ],
+        "id": "1523082348877",
+        "inMaintenanceHostLabelPairs": [],
+        "inTrash": false,
+        "lastProcessedMillis": 1523082289234,
+        "metricsUsed": [
+            "realtime.queuedEvents.fetches.latency.all.median"
+        ],
+        "minutes": 5,
+        "name": "Realtime - Aggregate FetchMessage Median Latency - HIGH",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "processRateMinutes": 1,
+        "severity": "SEVERE",
+        "snoozed": 1447354797804,
+        "sortAttr": -160,
+        "status": [
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": [
+                "bifrost-client",
+                "messaging",
+                "realtime"
+            ]
+        },
+        "target": "pd:2b7417f43da944c692711bc3920d5713,messaging-oncall@box.com",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1523082348877,
+        "updatedEpochMillis": 1523082348877,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "activeMaintenanceWindows": [],
+        "additionalInformation": "https://SomeHostName.net/display/ETO/SomePath",
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "last(5m,sum(ts(storm.bifrost.requests.reverseFetchMessages.latency.all.median, env=live))) > 5",
+        "conditionQBEnabled": false,
+        "createUserId": "hbaba@box.com",
+        "created": 1523082349048,
+        "createdEpochMillis": 1523082349048,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "last(5m,sum(ts(storm.bifrost.requests.reverseFetchMessages.latency.all.median, env=live)))",
+        "displayExpressionQBEnabled": false,
+        "event": {
+            "annotations": {
+                "created": "1444863387371",
+                "details": "<a class='ds-alert-link' href='https://box.wavefront.com/u/RSg0sPbFLq'>View Alert</a>",
+                "severity": "severe",
+                "target": "pd:2f0d52a889564ac49e6cf8b50ce57b09,messaging-oncall@box.com",
+                "type": "alert"
+            },
+            "canClose": false,
+            "canDelete": false,
+            "creatorId": "System Event",
+            "creatorType": [
+                "SYSTEM",
+                "ALERT"
+            ],
+            "endTime": 1496864291728,
+            "hosts": [
+                ""
+            ],
+            "id": "1496860172861:Updates Page - Total ReverseFetchMessage Median Latency - HIGH",
+            "name": "Updates Page - Total ReverseFetchMessage Median Latency - HIGH",
+            "runningState": "ENDED",
+            "startTime": 1496860172861,
+            "table": "box",
+            "updaterId": "System Event"
+        },
+        "failingHostLabelPairs": [],
+        "hostsUsed": [
+            "bifrost"
+        ],
+        "id": "1523082349048",
+        "inMaintenanceHostLabelPairs": [],
+        "inTrash": false,
+        "lastEventTime": 1496860172861,
+        "lastNotificationMillis": 1496860173349,
+        "lastProcessedMillis": 1523082312582,
+        "metricsUsed": [
+            "storm.bifrost.requests.reverseFetchMessages.latency.all.median"
+        ],
+        "minutes": 5,
+        "name": "Updates Page - Total ReverseFetchMessage Median Latency - HIGH",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "processRateMinutes": 1,
+        "severity": "SEVERE",
+        "snoozed": 1447354797690,
+        "sortAttr": -160,
+        "status": [
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": [
+                "bifrost-client",
+                "messaging",
+                "updates-page"
+            ]
+        },
+        "target": "pd:2f0d52a889564ac49e6cf8b50ce57b09,messaging-oncall@box.com",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1523082349048,
+        "updatedEpochMillis": 1523082349048,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "activeMaintenanceWindows": [],
+        "additionalInformation": "https://SomeHostName.net/display/ETO/SomePath",
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "rate(ts(\"cache-manager.exceptionCount.count\", env=\"staging\")) > 1",
+        "conditionQBEnabled": false,
+        "createUserId": "hbaba@box.com",
+        "created": 1523082349224,
+        "createdEpochMillis": 1523082349224,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "rate(ts(\"cache-manager.exceptionCount.count\", env=\"staging\"))",
+        "displayExpressionQBEnabled": false,
+        "failingHostLabelPairs": [],
+        "hostsUsed": [
+            "staging-cacheman02",
+            "staging-cacheman01"
+        ],
+        "id": "1523082349224",
+        "inMaintenanceHostLabelPairs": [],
+        "inTrash": false,
+        "lastProcessedMillis": 1523082304667,
+        "metricsUsed": [
+            "cache-manager.exceptionCount.count"
+        ],
+        "minutes": 2,
+        "name": "CacheManager Exception Rate - STAGING",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "severity": "SEVERE",
+        "snoozed": 1447354792960,
+        "sortAttr": -160,
+        "status": [
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": [
+                "cache-dev",
+                "cachemanager"
+            ]
+        },
+        "target": "cachingd+wavefront_critical@box.com, pd:26dd44251e1440e89fdc7e4ccbe0974b",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1523082349224,
+        "updatedEpochMillis": 1523082349224,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "activeMaintenanceWindows": [],
+        "additionalInformation": "Office Online Unexpected Errors have exceeded 50 in the last 5 minutes\nRunbook: https://SomeHostName.net/display/ETO/SomePath",
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "msum(5m, sum(ts(storm.office_online.unexpected_errors, env=live))) >= 50",
+        "createUserId": "hbaba@box.com",
+        "created": 1523082349397,
+        "createdEpochMillis": 1523082349397,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "ts(storm.office_online.unexpected_errors, env=live)",
+        "event": {
+            "annotations": {
+                "created": "1443467680730",
+                "details": "<a class='ds-alert-link' href='https://box.wavefront.com/u/0bfm90W2gp'>View Alert</a>",
+                "severity": "severe",
+                "target": "pd:e06a4ea4f88347db863599bba9cbecdb",
+                "type": "alert"
+            },
+            "canClose": false,
+            "canDelete": false,
+            "creatorId": "System Event",
+            "creatorType": [
+                "SYSTEM",
+                "ALERT"
+            ],
+            "endTime": 1499515710230,
+            "hosts": [
+                ""
+            ],
+            "id": "1499515432184:Prod - Office Online Unexpected Errors - HIGH",
+            "name": "Prod - Office Online Unexpected Errors - HIGH",
+            "runningState": "ENDED",
+            "startTime": 1499515432184,
+            "table": "box",
+            "updaterId": "System Event"
+        },
+        "failingHostLabelPairs": [],
+        "hostsUsed": [
+            "unknown"
+        ],
+        "id": "1523082349397",
+        "inMaintenanceHostLabelPairs": [],
+        "inTrash": false,
+        "lastEventTime": 1499515432184,
+        "lastNotificationMillis": 1499515432434,
+        "lastProcessedMillis": 1523082310631,
+        "metricsUsed": [
+            "storm.office_online.unexpected_errors"
+        ],
+        "minutes": 2,
+        "name": "Prod - Office Online Unexpected Errors - HIGH",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "severity": "SEVERE",
+        "snoozed": 1498167331067,
+        "sortAttr": -160,
+        "status": [
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": [
+                "Office-Online",
+                "Partners"
+            ]
+        },
+        "target": "pd:e06a4ea4f88347db863599bba9cbecdb",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1523082349397,
+        "updatedEpochMillis": 1523082349397,
+        "updaterId": "hbaba@box.com"
+    }
+]
