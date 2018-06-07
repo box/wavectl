@@ -1,0 +1,5 @@
+
+<!-- This file is auto generated. Do not edit it. Any modifications will be -->
+<!-- overwritten next time documentation is generated. The source for this file -->
+<!-- resides in <repo_root>/doc/sphinx directory. Modify there and execute -->
+<!-- `make all` in that directory. -->
