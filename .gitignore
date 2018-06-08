@@ -4,9 +4,8 @@
 # Packages
 *.egg
 *.egg-info
-
-# Unit test
-.tox
+build/*
+dist/*
 
 # Mac noise
 .DS_Store
