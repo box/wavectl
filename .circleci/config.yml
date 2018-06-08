@@ -3,16 +3,9 @@ defaults: &defaults
   # This is the directory where circle ci checks out the repo.
   working_directory: /home/circleci/project
 
-dockerhub_creds: &dockerhub_creds
-  auth:
-    username: ahakanbaba
-    password: $DOCKERHUB_PASSWORD
-
 container_env: &container_env
      docker:
-       # TODO: Once we are ready to opensource this and to move github.com/box,
-       # start using boxinc's public images on hub.docker
-       - image: ahakanbaba/wavectl:centos7
+       - image: boxinc/wavectl:centos7
          <<: *dockerhub_creds
 
 version: 2
