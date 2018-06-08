@@ -6,7 +6,6 @@ defaults: &defaults
 container_env: &container_env
      docker:
        - image: boxinc/wavectl:centos7
-         <<: *dockerhub_creds
 
 version: 2
 jobs:
