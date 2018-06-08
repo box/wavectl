@@ -1,7 +1,8 @@
 
-
 \# wavectl
 
+\[!\[CircleCI\]\(https://circleci.com/gh/box/wavectl.svg?style=svg\)\]\(https://circleci.com/gh/box/wavectl\)
+\[!\[Project Status\]\(http://opensource.box.com/badges/active.svg\)\]\(http://opensource.box.com/badges\)
 
 A command line client for \[Wavefront\]\(https://www.wavefront.com\) inspired by
 \[kubectl\]\(https://kubernetes.io/docs/reference/kubectl/overview/\) and
