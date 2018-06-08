@@ -5,8 +5,8 @@ from __future__ import print_function
 from setuptools import setup, find_packages
 import os
 
-classifiers = [
-    'Development Status :: 5 - Production/Active',
+CLASSIFIERS = [
+    'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: Apache Software License',
     'Programming Language :: Python',
@@ -38,13 +38,14 @@ base_dir = os.path.dirname(__file__)
 
 setup(
     name="wavectl",
-    version="0.2.0",
+    version="0.3.0",
     description="Command Line Client For Wavefront",
-    long_description=open(join(base_dir, 'README.md'), encoding='utf-8').read()
+    long_description=open(os.path.join(base_dir, 'README.md'),).read(),
+    long_description_content_type='text/markdown',
     url="https://github.com/box/wavectl",
     author="Box",
     author_email="oss@box.com",
-    keywords=["Wavefront", "Wavefront Public API", "wavectl"],
+    keywords=["Wavefront", "Wavefront Public API", "wavectl", "cli"],
     packages=find_packages(),
     install_requires=install_requires,
     test_require=test_require,
@@ -53,7 +54,6 @@ setup(
             'wavectl = wavectl.main:main',
         ]
     },
-    classifiers=classifiers,
-    keywords='wavectl wavefront cli',
+    classifiers=CLASSIFIERS,
     license='Apache Software License, Version 2.0, http://www.apache.org/licenses/LICENSE-2.0',
 )
