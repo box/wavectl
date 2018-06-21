@@ -170,7 +170,8 @@ class Test(util.TestPull):
                                   wavectl.PullCommand.pullBranchSuffix)
 
             self.executePull(rsrcType, d, r,
-                             firstExpectedRsrs, pullAdditionalParams=["--inGit"],
+                             firstExpectedRsrs, pullAdditionalParams=[
+                                 "--inGit"],
                              rsrcAdditionalParams=firstAdditionalParams)
 
             time.sleep(2)
@@ -222,6 +223,56 @@ class Test(util.TestPull):
     def test_pullWithoutAPullBranch(self):
         self.pullWithoutAPullBranch("alert", util.allAlerts)
         self.pullWithoutAPullBranch("dashboard", util.allDashboards)
+
+    def test_redactedCommandLine(self):
+        """Sometimes we need to redact secrets from a commandLine. In this function
+        we verify the redaction works correctly"""
+        inputOutput = [
+            {
+                "input": [],
+                "output": [],
+            }, {
+                "input": ["--apiToken", "someSecret"],
+                "output": ["--apiToken", "REDACTED"],
+            }, {
+                "input": ["--apiToken", "someSecret", "--apiToken",
+                          "someSecret"],
+                "output": ["--apiToken", "REDACTED", "--apiToken",
+                           "REDACTED"],
+            }, {
+                "input": ["--apiToken", "someSecret", "--apiToken",
+                          "someSecret"],
+                "output": ["--apiToken", "REDACTED", "--apiToken",
+                           "REDACTED"]
+            }, {
+                "input": ["one",
+                          "--two",
+                          "--apiToken",
+                          "someSecret",
+                          "one",
+                          "--two",
+                          "--apiToken",
+                          "someSecret",
+                          "one",
+                          "--two",
+                          ],
+                "output": ["one",
+                           "--two",
+                           "--apiToken",
+                           "REDACTED",
+                           "one",
+                           "--two",
+                           "--apiToken",
+                           "REDACTED",
+                           "one",
+                           "--two",
+                           ]
+            }, ]
+
+        for inout in inputOutput:
+            self.assertListEqual(
+                inout["output"],
+                wavectl.PullCommand.getRedactedCommandLine(inout["input"]))
 
 
 if __name__ == '__main__':
