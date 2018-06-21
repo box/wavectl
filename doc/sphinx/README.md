@@ -71,9 +71,20 @@ A short list of common usages. For more details \[Use Cases\]\(#example-use-case
 
 \#\# Installation
 
-```
+To install the latest release:
+
+\`\`\`
     pip install wavectl
-```
+\`\`\`
+
+To install from the master branch in github:
+
+\`\`\`
+     pip install git+https://github.com/box/wavectl.git
+\`\`\`
+
+The master branch may contain unreleased features or bug fixes. The master branch
+\*should\* always stay stable.
 
 \#\# A note about Performance
 
