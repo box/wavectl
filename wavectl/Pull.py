@@ -2,6 +2,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 import argparse
+import copy
 import os
 import json
 import time
@@ -33,6 +34,24 @@ class PullCommand(BaseWavefrontCommand):
 
     # TODO: Add the resource name to the pull branch suffix
     pullBranchSuffix = "-pull-branch"
+
+    @staticmethod
+    def getRedactedCommandLine(commandLine):
+        """Sometimes the commandLine contains option parameters that are
+        secret keys. For example the user can pass --apiToken <WavefrontSecret>
+        In this function we replace those secrets with the literal REDACTED word"""
+
+        rv = copy.deepcopy(commandLine)
+        optionsFollowedBySecret = [BaseCommand.apiTokenOptionName]
+        redacted = "REDACTED"
+
+        for o in optionsFollowedBySecret:
+            idxs = [i for i, v in enumerate(rv) if v == o]
+            for idx in idxs:
+                # replace the following word in commandLine after an option
+                # that is followed by a secret
+                rv[idx + 1] = redacted
+        return rv
 
     def maybeSetUserEmail(self, r):
         """If git is not configured correctly for the user, git commands fail
@@ -84,7 +103,7 @@ class PullCommand(BaseWavefrontCommand):
 
     def checkCleanRepo(self, r):
         """ Check that the git repo is "clean". In other words, the repo does
-        not contain any staged-but-uncommitted changes and also does not have
+        not contain any staged - but - uncommitted changes and also does not have
         local modifications. """
         if r.is_dirty():
             raise PullError(
@@ -94,7 +113,7 @@ class PullCommand(BaseWavefrontCommand):
 
     def getNewestPullBranch(self, r):
         """In the given repo there should be several pull branches named like
-        <creation-datetime><pullBranchSuffix>. This function returns the newest one
+        <creation - datetime > <pullBranchSuffix > . This function returns the newest one
         of those pull branches. If it cannot find any pull branches, it returns
         None"""
 
@@ -167,7 +186,7 @@ class PullCommand(BaseWavefrontCommand):
 
     def commitAndMergeFiles(self, repo, pullBranch, mergeIntoBranch):
         """The repo has some changes to be committed. Commit them to the
-        pullBranch (should be current branch) and merge them to the given
+        pullBranch(should be current branch) and merge them to the given
         mergeIntoBranch """
 
         assert(repo.head.ref.name == pullBranch.name
@@ -177,7 +196,7 @@ class PullCommand(BaseWavefrontCommand):
             with_extended_output=True,
             message="Added files due to pull <resource> cmd:{0}".format(
                 " ".join(
-                    sys.argv)))
+                    PullCommand.getRedactedCommandLine(sys.argv))))
 
         if mergeIntoBranch != self.noBranchName:
             # Merge pull branch into the given branch.
@@ -255,7 +274,7 @@ class PullCommand(BaseWavefrontCommand):
         initialB.checkout()
 
     def handleCmd(self, args):
-        """ Handles the pull <resource> [...] commands.
+        """ Handles the pull < resource > [...] commands.
         Pulls the given resources from the wavefront api server to a current
         directory"""
         super(PullCommand, self).handleCmd(args)
@@ -293,7 +312,7 @@ class PullCommand(BaseWavefrontCommand):
                 self.noBranchName))
 
     def addCmd(self, subParsers):
-        """ Adds the necessary command line arguments to the `pull <resource>`
+        """ Adds the necessary command line arguments to the `pull < resource > `
         command using the given subParsers. The `pull` command is used
         to save the existing configs to a local directory in json form.
         Also add a pointer to the function that handles the pull command.

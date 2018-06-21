@@ -30,8 +30,8 @@ Each `pull` command creates a new commit with the changes pulled from the Wavefr
 
 ``` 
   $ git -C /tmp/GitIntegrationPull/alerts log --oneline
-  774ccab Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
-  4a6b940 Initial commit with the README.md file
+  a65a622 Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
+  370ccac Initial commit with the README.md file
 ```
 
 If you execute a long running daemon executing periodic pulls from Wavefront, an extensive git history can be built. The git history will correspond to users' edits to alerts and dashboards.
@@ -52,9 +52,9 @@ For example:
 
 ``` 
   $ git -C /tmp/GitIntegrationPull/alerts log 1523082347619.alert
-  commit 774ccab540faf10e1ebfa0126ab8c1e9f033195d
+  commit a65a622277e3f245ecbf0cf21e9253bd12031dd0
   Author: Hakan Baba <hakanbaba83@gmail.com>
-  Date:   Thu Jun 7 22:39:45 2018 -0700
+  Date:   Wed Jun 20 23:24:54 2018 -0700
 
       Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
 ```
@@ -63,9 +63,9 @@ For example:
 
 ``` 
   $ git -C /tmp/GitIntegrationPull/alerts log -S snoozed 1523082349048.alert
-  commit 774ccab540faf10e1ebfa0126ab8c1e9f033195d
+  commit a65a622277e3f245ecbf0cf21e9253bd12031dd0
   Author: Hakan Baba <hakanbaba83@gmail.com>
-  Date:   Thu Jun 7 22:39:45 2018 -0700
+  Date:   Wed Jun 20 23:24:54 2018 -0700
 
       Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
 ```
@@ -133,7 +133,7 @@ Submit your changes to the local repo:
 
 ``` 
   $ git -C /tmp/GitIntegrationPush/alerts commit -a -m "proc. is replaced with host.proc."
-  [master 262fe69] proc. is replaced with host.proc.
+  [master c49ae20] proc. is replaced with host.proc.
    3 files changed, 6 insertions(+), 6 deletions(-)
 ```
 
