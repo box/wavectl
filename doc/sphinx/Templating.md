@@ -45,7 +45,6 @@ is the right medium for developing new alerts and dashboards. If there is a need
 templetize an alert, that alert would have been implemented via the Wavefront GUI
 already.
 
-
 With that observation, the first step to generate the alert templates is to
 download the json representation of the alerts from Wavefront. The
 \[\`pull\`\]\(CommandReference.md#pull-options\) command accomplishes that.
@@ -70,7 +69,6 @@ download the json representation of the alerts from Wavefront. The
     :prompt:
 ```
 
-
 ```eval_rst
  .. program-output:: cat /tmp/Templating/alerts/*
     :returncode: 0
@@ -79,11 +77,22 @@ download the json representation of the alerts from Wavefront. The
     :ellipsis: 15
 ```
 
+<!-- TODO: Add more templatable alerts to the TestAlert.json. So that this example -->
+<!-- actually makes sense to the user. Use collections service alets. -->
+
+Once we have the json files downloaded, we need to decide on a templating tool.
+Since we are working on json files, in this example, we have choosen
+\[jsonnet\]\(https://jsonnet.org/\). jsonnet is a very powerful json templating
+tool and it is used in various other places in kubernetes community. You could
+use your own favorite templating tool chain, the commands will be different but
+the main idea stays the same. \[Mustache\]\(https://mustache.github.io/\) or
+\[go\]\(https://golang.org/pkg/text/template/\) templates or even
+\[sed\]\(https://www.gnu.org/software/sed/\) commands are suitable for this
+task.
 
 
 
-
-
+////////////////////////////
 
 NOTES:
 
@@ -97,6 +106,10 @@ sed commands to convert into templates.
 \3. Wavectl is quite opinioted about the file extensions and file names. One may
 prefer to use the alert name itself as the name of the template. Doing that
 requires manual work.
+\4. In order to change a threshold, the team needs to re-generate the whole
+templated alerts and write them back to dashboard.
+\5. Once a team creates their alerts from a template they need to execute create.
+
 
 ar
 
