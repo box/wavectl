@@ -13,9 +13,9 @@ For example: show alerts that have "Kubernetes" and "Utilization" in their names
 ``` 
   $ wavectl show alert --name "Kubernetes.*Utilization"
   ID               NAME                                                                                     STATUS                              SEVERITY    
-  1523082347619    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
-  1523082347824    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
-  1523082348005    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN
+  1530723441304    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
+  1530723441442    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
+  1530723441589    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN
 ```
 
 The `--match` parameter can be used to search anywhere in the json representation of an alert or a dashboard rather than in known key value pairs.

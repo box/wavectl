@@ -46,8 +46,11 @@ templetize an alert, that alert would have been implemented via the Wavefront GU
 already.
 
 With that observation, the first step to generate the alert templates is to
-download the json representation of the alerts from Wavefront. The
-\[\`pull\`\]\(CommandReference.md#pull-options\) command accomplishes that.
+download the json representation of the alerts from Wavefront.  In this
+example, a service called collections-service has some good alerts. We want to
+build templates from them so that they can be easily used by other teams too.
+The \[\`pull\`\]\(CommandReference.md#pull-options\) command is used to
+download the alerts.
 
 
 <!-- First delete the temporary directory  -->
@@ -58,7 +61,7 @@ download the json representation of the alerts from Wavefront. The
 ```
 
 ```eval_rst
- .. program-output:: wavectl pull /tmp/Templating/alerts alert
+ .. program-output:: wavectl pull /tmp/Templating/alerts alert -t collections-service
     :returncode: 0
     :prompt:
 ```
@@ -77,8 +80,9 @@ download the json representation of the alerts from Wavefront. The
     :ellipsis: 15
 ```
 
-<!-- TODO: Add more templatable alerts to the TestAlert.json. So that this example -->
-<!-- actually makes sense to the user. Use collections service alets. -->
+\> NOTE: In this example there are a small number of alerts. All the concepts
+and commands discussed here, easily expand to many more alerts and dashboards.
+We kept the data small to have a easy to follow example.
 
 Once we have the json files downloaded, we need to decide on a templating tool.
 Since we are working on json files, in this example, we have choosen

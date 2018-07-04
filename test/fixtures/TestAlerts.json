@@ -462,7 +462,7 @@
         "severity": "INFO",
         "sortAttr": -190,
         "status": [
-            "CHECKING"
+            "FIRING"
         ],
         "tags": {
             "customerTags": [
@@ -516,6 +516,7 @@
         "snoozed": 1447354797804,
         "sortAttr": -160,
         "status": [
+            "IN_MAINTENANCE",
             "CHECKING"
         ],
         "tags": {

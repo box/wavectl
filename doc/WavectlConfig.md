@@ -15,10 +15,10 @@ For example:
 ``` 
   $ wavectl show --wavefrontHost https://acme.wavefront.com --apiToken 98jsb6ef-3939-kk88-8jv2-f84knf71vq68 alert
   ID               NAME                                                                                     STATUS                              SEVERITY    
-  1523082347619    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
-  1523082347824    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
-  1523082348005    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN      
-  1523082348172    Wavefront Freshness                                                                      CHECKING                            WARN      
+  1530723441304    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
+  1530723441442    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
+  1530723441589    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN      
+  1530723441737    Wavefront Freshness                                                                      CHECKING                            WARN      
   ...
 ```
 
@@ -36,10 +36,10 @@ For example:
 
   $ wavectl show alert
   ID               NAME                                                                                     STATUS                              SEVERITY    
-  1523082347619    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
-  1523082347824    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
-  1523082348005    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN      
-  1523082348172    Wavefront Freshness                                                                      CHECKING                            WARN      
+  1530723441304    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
+  1530723441442    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
+  1530723441589    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN      
+  1530723441737    Wavefront Freshness                                                                      CHECKING                            WARN      
   ...
 ```
 
