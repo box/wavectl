@@ -82,16 +82,18 @@ For example:
 \#\#\# When was an a particular alert created ?
 
 ```eval_rst
- .. program-output:: git -C /tmp/GitIntegrationPull/alerts log 1523082347619.alert
+ .. program-output:: git -C /tmp/GitIntegrationPull/alerts log $(ls /tmp/GitIntegrationPull/alerts | sort | head -n 1)
     :returncode: 0
+    :shell:
     :prompt:
 ```
 
-\#\#\# When was this alert snoozed ?
+\#\#\# When were each alert snoozed ?
 
 ```eval_rst
- .. program-output:: git -C /tmp/GitIntegrationPull/alerts log -S snoozed 1523082349048.alert
+ .. program-output:: git -C /tmp/GitIntegrationPull/alerts log -S snoozed
     :returncode: 0
+    :shell:
     :prompt:
 ```
 

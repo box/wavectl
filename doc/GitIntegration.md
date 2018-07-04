@@ -30,8 +30,8 @@ Each `pull` command creates a new commit with the changes pulled from the Wavefr
 
 ``` 
   $ git -C /tmp/GitIntegrationPull/alerts log --oneline
-  f5df9c5 Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
-  179f1ac Initial commit with the README.md file
+  a5630ef Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
+  ea6a73b Initial commit with the README.md file
 ```
 
 If you execute a long running daemon executing periodic pulls from Wavefront, an extensive git history can be built. The git history will correspond to users' edits to alerts and dashboards.
@@ -51,21 +51,21 @@ For example:
 ### When was an a particular alert created ?
 
 ``` 
-  $ git -C /tmp/GitIntegrationPull/alerts log 1523082347619.alert
-  commit f5df9c557156e43d6aba6bcf19e4089e61c00759
+  $ git -C /tmp/GitIntegrationPull/alerts log $(ls /tmp/GitIntegrationPull/alerts | sort | head -n 1)
+  commit a5630ef8d03d61999870f0c65590c9e88bf4db69
   Author: Hakan Baba <you@example.com>
-  Date:   Tue Jul 3 22:57:26 2018 -0700
+  Date:   Wed Jul 4 10:47:28 2018 -0700
 
       Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
 ```
 
-### When was this alert snoozed ?
+### When were each alert snoozed ?
 
 ``` 
-  $ git -C /tmp/GitIntegrationPull/alerts log -S snoozed 1523082349048.alert
-  commit f5df9c557156e43d6aba6bcf19e4089e61c00759
+  $ git -C /tmp/GitIntegrationPull/alerts log -S snoozed
+  commit a5630ef8d03d61999870f0c65590c9e88bf4db69
   Author: Hakan Baba <you@example.com>
-  Date:   Tue Jul 3 22:57:26 2018 -0700
+  Date:   Wed Jul 4 10:47:28 2018 -0700
 
       Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
 ```
@@ -94,10 +94,10 @@ See the modifications to alerts that are going to be pushed to Wavefront:
 
 ``` 
   $ git -C /tmp/GitIntegrationPush/alerts diff HEAD
-  diff --git a/1523082347619.alert b/1523082347619.alert
-  index 15fd120..6a273af 100644
-  --- a/1523082347619.alert
-  +++ b/1523082347619.alert
+  diff --git a/1530723441304.alert b/1530723441304.alert
+  index a1bb891..ec02df7 100644
+  --- a/1530723441304.alert
+  +++ b/1530723441304.alert
   @@ -1,7 +1,7 @@
    {
        "additionalInformation": "This alert tracks the used network bandwidth percentage for all the compute-* (compute-master and compute-node) machines. If the cpu utilization exceeds 80%, this alert fires.",
@@ -105,13 +105,13 @@ See the modifications to alerts that are going to be pushed to Wavefront:
   -    "displayExpression": "ts(proc.net.percent,server_type=\"compute-*\" and env=\"live\")",
   +    "condition": "ts(host.proc.net.percent,server_type=\"compute-*\" and env=\"live\") > 80",
   +    "displayExpression": "ts(host.proc.net.percent,server_type=\"compute-*\" and env=\"live\")",
-       "id": "1523082347619",
+       "id": "1530723441304",
        "minutes": 2,
        "name": "Kubernetes - Node Network Utilization - HIGH (Prod)",
-  diff --git a/1523082347824.alert b/1523082347824.alert
-  index 92d7cdf..8b3dc9e 100644
-  --- a/1523082347824.alert
-  +++ b/1523082347824.alert
+  diff --git a/1530723441442.alert b/1530723441442.alert
+  index ad9e8ef..bb0bf57 100644
+  --- a/1530723441442.alert
+  +++ b/1530723441442.alert
   @@ -1,7 +1,7 @@
    {
        "additionalInformation": "This alert tracks the used cpu percentage for all the compute-* (compute-master and compute-node) machines. If the cpu utilization exceeds 80%, this alert fires.",
@@ -119,13 +119,13 @@ See the modifications to alerts that are going to be pushed to Wavefront:
   -    "displayExpression": "ts(proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"dev\")",
   +    "condition": "ts(host.proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"live\") > 80",
   +    "displayExpression": "ts(host.proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"dev\")",
-       "id": "1523082347824",
+       "id": "1530723441442",
        "minutes": 2,
        "name": "Kubernetes - Node Cpu Utilization - HIGH (Prod)",
-  diff --git a/1523082348005.alert b/1523082348005.alert
-  index ce15a85..60363e6 100644
-  --- a/1523082348005.alert
-  +++ b/1523082348005.alert
+  diff --git a/1530723441589.alert b/1530723441589.alert
+  index e7a0d7f..830d19f 100644
+  --- a/1530723441589.alert
+  +++ b/1530723441589.alert
   ...
 ```
 
@@ -133,8 +133,9 @@ Submit your changes to the local repo:
 
 ``` 
   $ git -C /tmp/GitIntegrationPush/alerts commit -a -m "proc. is replaced with host.proc."
-  [master 9bfa3ae] proc. is replaced with host.proc.
-   3 files changed, 6 insertions(+), 6 deletions(-)
+  [master b4f1e1b] proc. is replaced with host.proc.
+   4 files changed, 22 insertions(+), 22 deletions(-)
+   rewrite 1530723443146.alert (64%)
 ```
 
 > NOTE: If you are using git integration, `wavectl` will not let you push unless you have committed your changes to the repo. This behavior is like a safeguard to ensure that the user is fully aware of what he is writing to Wavefont via `wavectl push`. Asking the user to commit his local changes, serves to ensure that she has inspected the diff and is OK with the modifications.
@@ -145,9 +146,10 @@ Lastly, push your local modifications to Wavefront.
   $ wavectl push --inGit /tmp/GitIntegrationPush/alerts alert
   Replaced alert(s):
   ID               NAME                                                       STATUS    SEVERITY    
-  1523082347619    Kubernetes - Node Network Utilization - HIGH (Prod)            WARN    
-  1523082347824    Kubernetes - Node Cpu Utilization - HIGH (Prod)                WARN    
-  1523082348005    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)        WARN
+  1530723441304    Kubernetes - Node Network Utilization - HIGH (Prod)            WARN    
+  1530723441442    Kubernetes - Node Cpu Utilization - HIGH (Prod)                WARN    
+  1530723441589    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)        WARN    
+  1530723443146    Collections Dev High CPU                                       WARN
 ```
 
 > NOTE: Even with all the safeguards, if you have made a mistake and pushed to Wavefront, you can roll back the git repo to the previous commit. A command like `git checkout HEAD^` will remove your most recent changes from local files. After that, you can re-execute the push command. That will update all alerts one more time and will set them to the previous state.

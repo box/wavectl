@@ -19,9 +19,9 @@ A short list of common usages. For more details [Use Cases](#example-use-cases) 
 ``` 
   $ wavectl show alert
   ID               NAME                                                                                     STATUS                              SEVERITY    
-  1523082347619    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
-  1523082347824    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
-  1523082348005    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN      
+  1530723441304    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
+  1530723441442    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
+  1530723441589    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN      
   ...
 ```
 
@@ -33,7 +33,7 @@ A short list of common usages. For more details [Use Cases](#example-use-cases) 
       "additionalInformation": "This alert tracks the used network bandwidth percentage for all the compute-* (compute-master and compute-node) machines. If the cpu utilization exceeds 80%, this alert fires.",
       "condition": "ts(proc.net.percent,server_type=\"compute-*\" and env=\"live\") > 80",
       "displayExpression": "ts(proc.net.percent,server_type=\"compute-*\" and env=\"live\")",
-      "id": "1523082347619",
+      "id": "1530723441304",
       "minutes": 2,
       "name": "Kubernetes - Node Network Utilization - HIGH (Prod)",
       "resolveAfterMinutes": 2,
@@ -44,7 +44,7 @@ A short list of common usages. For more details [Use Cases](#example-use-cases) 
               "skynet"
           ]
       },
-      "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2"
+      "target": "pd: 07fe9ebacf8c44e881ea2f6e44dbf2d2"
   }
   {
       "additionalInformation": "This alert tracks the used cpu percentage for all the compute-* (compute-master and compute-node) machines. If the cpu utilization exceeds 80%, this alert fires.",
