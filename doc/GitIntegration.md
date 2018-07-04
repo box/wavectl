@@ -30,8 +30,8 @@ Each `pull` command creates a new commit with the changes pulled from the Wavefr
 
 ``` 
   $ git -C /tmp/GitIntegrationPull/alerts log --oneline
-  b63bfbd Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
-  09d6468 Initial commit with the README.md file
+  2c25c0c Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
+  169344e Initial commit with the README.md file
 ```
 
 If you execute a long running daemon executing periodic pulls from Wavefront, an extensive git history can be built. The git history will correspond to users' edits to alerts and dashboards.
@@ -52,9 +52,9 @@ For example:
 
 ``` 
   $ git -C /tmp/GitIntegrationPull/alerts log 1523082347619.alert
-  commit b63bfbdf62ba3f4fe682933f0979ed99ccf13ae7
-  Author: Hakan Baba <hakanbaba83@gmail.com>
-  Date:   Wed Jun 20 23:44:10 2018 -0700
+  commit 2c25c0cc109c8d26c4ee12fea0ddacff2f451c6e
+  Author: Hakan Baba <you@example.com>
+  Date:   Tue Jul 3 21:40:12 2018 -0700
 
       Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
 ```
@@ -63,9 +63,9 @@ For example:
 
 ``` 
   $ git -C /tmp/GitIntegrationPull/alerts log -S snoozed 1523082349048.alert
-  commit b63bfbdf62ba3f4fe682933f0979ed99ccf13ae7
-  Author: Hakan Baba <hakanbaba83@gmail.com>
-  Date:   Wed Jun 20 23:44:10 2018 -0700
+  commit 2c25c0cc109c8d26c4ee12fea0ddacff2f451c6e
+  Author: Hakan Baba <you@example.com>
+  Date:   Tue Jul 3 21:40:12 2018 -0700
 
       Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
 ```
@@ -133,7 +133,7 @@ Submit your changes to the local repo:
 
 ``` 
   $ git -C /tmp/GitIntegrationPush/alerts commit -a -m "proc. is replaced with host.proc."
-  [master 558ebdd] proc. is replaced with host.proc.
+  [master d17a612] proc. is replaced with host.proc.
    3 files changed, 6 insertions(+), 6 deletions(-)
 ```
 

@@ -10,6 +10,14 @@ For \`show\` command, only the matched alerts/dashboards will be displayed, for
 \`push\` only the matching ones will be written to Wavefront, and so on.
 
 
+<!-- First setup the fake home dir and config file  -->
+
+```eval_rst
+ .. program-output:: printf 'https://acme.wavefront.com \n 98jsb6ef-3939-kk88-8jv2-f84knf71vq68 \n' | wavectl config > /dev/null
+    :shell:
+    :returncode: 0
+```
+
 For example: show alerts that have "Kubernetes" and "Utilization" in their names:
 
 ```eval_rst

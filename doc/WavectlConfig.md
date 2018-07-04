@@ -28,7 +28,7 @@ For example:
 
 ``` 
   $ printf 'https://acme.wavefront.com \n 98jsb6ef-3939-kk88-8jv2-f84knf71vq68 \n' | wavectl config
-  Wavefront host url: Api token: Writing the following config to the config file at /Users/hbaba/.wavectl/config: 
+  Wavefront host url: Api token: Writing the following config to the config file at /tmp/Users/someuser/.wavectl/config: 
   {
       "apiToken": " 98jsb6ef-3939-kk88-8jv2-f84knf71vq68 ",
       "wavefrontHost": "https://acme.wavefront.com "
