@@ -8,8 +8,8 @@
         "condition": "ts(proc.net.percent,server_type=\"compute-*\" and env=\"live\") > 80",
         "conditionQBEnabled": false,
         "createUserId": "hbaba@box.com",
-        "created": 1523082347619,
-        "createdEpochMillis": 1523082347619,
+        "created": 1530723441304,
+        "createdEpochMillis": 1530723441304,
         "creatorId": "hbaba@box.com",
         "deleted": false,
         "displayExpression": "ts(proc.net.percent,server_type=\"compute-*\" and env=\"live\")",
@@ -23,10 +23,10 @@
             "compute-master2004",
             "compute-master2003"
         ],
-        "id": "1523082347619",
+        "id": "1530723441304",
         "inMaintenanceHostLabelPairs": [],
         "inTrash": false,
-        "lastProcessedMillis": 1523082296336,
+        "lastProcessedMillis": 1530723396812,
         "metricsUsed": [
             "proc.net.percent"
         ],
@@ -47,11 +47,11 @@
                 "skynet"
             ]
         },
-        "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2",
+        "target": "pd: 07fe9ebacf8c44e881ea2f6e44dbf2d2",
         "targetInfo": [],
         "updateUserId": "hbaba@box.com",
-        "updated": 1523082347619,
-        "updatedEpochMillis": 1523082347619,
+        "updated": 1530723441304,
+        "updatedEpochMillis": 1530723441304,
         "updaterId": "hbaba@box.com"
     },
     {
@@ -63,8 +63,8 @@
         "condition": "ts(proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"live\") > 80",
         "conditionQBEnabled": false,
         "createUserId": "hbaba@box.com",
-        "created": 1523082347824,
-        "createdEpochMillis": 1523082347824,
+        "created": 1530723441442,
+        "createdEpochMillis": 1530723441442,
         "creatorId": "hbaba@box.com",
         "deleted": false,
         "displayExpression": "ts(proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"dev\")",
@@ -74,7 +74,7 @@
                 "created": "1475605950071",
                 "details": "<a class=\"ds-alert-link\" href=\"https://box.wavefront.com/u/HV9Cn1KzqS\">View Alert</a>\n<br />\n<strong>First Affected: </strong>compute-node2026 (proc.stat.cpu.percentage_used) [productname=PowerEdge_R420][env=live][server_type=compute-node][dc=sv2]",
                 "severity": "warn",
-                "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2",
+                "target": "pd: 07fe8ebacf8c44e881ea2f6e44dbf2d2",
                 "type": "alert"
             },
             "canClose": false,
@@ -88,8 +88,8 @@
             "hosts": [
                 "compute-node2026"
             ],
-            "id": "1500604689002:Kubernetes - Node Cpu Utilization - HIGH (Prod)",
-            "name": "Kubernetes - Node Cpu Utilization - HIGH (Prod)",
+            "id": "1500604689002:Kubernetes - Node Cpu Utilization - HIGH (Pro:1",
+            "name": "Kubernetes - Node Cpu Utilization - HIGH (Pro",
             "runningState": "ENDED",
             "startTime": 1500604689002,
             "table": "box",
@@ -105,12 +105,12 @@
             "compute-master2004",
             "compute-master2003"
         ],
-        "id": "1523082347824",
+        "id": "1530723441442",
         "inMaintenanceHostLabelPairs": [],
         "inTrash": false,
         "lastEventTime": 1500604689002,
         "lastNotificationMillis": 1500604689490,
-        "lastProcessedMillis": 1523082301428,
+        "lastProcessedMillis": 1530723391076,
         "metricsUsed": [
             "proc.stat.cpu.percentage_used"
         ],
@@ -130,11 +130,11 @@
                 "skynet"
             ]
         },
-        "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2",
+        "target": "pd: 06fe8ebacf8c44e881ea2f6e44dbf2d2",
         "targetInfo": [],
         "updateUserId": "hbaba@box.com",
-        "updated": 1523082347824,
-        "updatedEpochMillis": 1523082347824,
+        "updated": 1530723441442,
+        "updatedEpochMillis": 1530723441442,
         "updaterId": "hbaba@box.com"
     },
     {
@@ -146,8 +146,8 @@
         "condition": "ts(proc.meminfo.percentage_swapused,server_type=\"compute-*\" and env=\"live\") > 10",
         "conditionQBEnabled": false,
         "createUserId": "hbaba@box.com",
-        "created": 1523082348005,
-        "createdEpochMillis": 1523082348005,
+        "created": 1530723441589,
+        "createdEpochMillis": 1530723441589,
         "creatorId": "hbaba@box.com",
         "deleted": false,
         "displayExpression": "ts(proc.meminfo.percentage_swapused,server_type=\"compute-*\" and env=\"live\")",
@@ -157,7 +157,7 @@
                 "created": "1475606266531",
                 "details": "<a class='ds-alert-link' href='https://box.wavefront.com/u/RtKX0k1PGH'>View Alert</a><br><strong>First Affected: </strong>compute-node2013 (proc.meminfo.percentage_swapused) [productname=PowerEdge_R420][env=live][server_type=compute-node][dc=sv2]",
                 "severity": "warn",
-                "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2",
+                "target": "pd: 07fe9ebacf8c44e881ea2f6e44dbf2d2",
                 "type": "alert"
             },
             "canClose": false,
@@ -171,8 +171,8 @@
             "hosts": [
                 "compute-node2013"
             ],
-            "id": "1484939388909:Kubernetes - Node Memory Swap Utilization - HIGH (Prod)",
-            "name": "Kubernetes - Node Memory Swap Utilization - HIGH (Prod)",
+            "id": "1484939388909:Kubernetes - Node Memory Swap Utilization - HIGH (Pro:1",
+            "name": "Kubernetes - Node Memory Swap Utilization - HIGH (Pro",
             "runningState": "ENDED",
             "startTime": 1484939388909,
             "table": "box",
@@ -187,11 +187,11 @@
             "compute-node3007",
             "compute-node3009"
         ],
-        "id": "1523082348005",
+        "id": "1530723441589",
         "inMaintenanceHostLabelPairs": [],
         "inTrash": false,
         "lastEventTime": 1484939388909,
-        "lastProcessedMillis": 1523082297325,
+        "lastProcessedMillis": 1530723388761,
         "metricsUsed": [
             "proc.meminfo.percentage_swapused"
         ],
@@ -213,11 +213,11 @@
                 "skynet"
             ]
         },
-        "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2",
+        "target": "pd: 06fe9ebacf9c45e881ea2f6e44dbf2d2",
         "targetInfo": [],
         "updateUserId": "hbaba@box.com",
-        "updated": 1523082348005,
-        "updatedEpochMillis": 1523082348005,
+        "updated": 1530723441589,
+        "updatedEpochMillis": 1530723441589,
         "updaterId": "hbaba@box.com"
     },
     {
@@ -229,8 +229,8 @@
         "condition": "sum(rate(ts(\"~collector.points.valid\")))<10000",
         "conditionQBEnabled": false,
         "createUserId": "hbaba@box.com",
-        "created": 1523082348172,
-        "createdEpochMillis": 1523082348172,
+        "created": 1530723441737,
+        "createdEpochMillis": 1530723441737,
         "creatorId": "hbaba@box.com",
         "deleted": false,
         "displayExpression": "sum(rate(ts(\"~collector.points.valid\")))",
@@ -240,7 +240,7 @@
                 "created": "1433400898202",
                 "details": "<a class='ds-alert-link' href='https://box.wavefront.com/u/pLp939zrQC'>View Alert</a>",
                 "severity": "warn",
-                "target": "dmourati@box.com",
+                "target": "null@box.com",
                 "type": "alert"
             },
             "canClose": false,
@@ -254,8 +254,8 @@
             "hosts": [
                 ""
             ],
-            "id": "1490392285900:Wavefront Freshness",
-            "name": "Wavefront Freshness",
+            "id": "1490392285900:Wavefront Freshne:1",
+            "name": "Wavefront Freshne",
             "runningState": "ENDED",
             "startTime": 1490392285900,
             "table": "box",
@@ -270,12 +270,12 @@
             "wavefront-proxy-3128578140-cyx6n",
             "wavefront-proxy-2192725283-p2xr7"
         ],
-        "id": "1523082348172",
+        "id": "1530723441737",
         "inMaintenanceHostLabelPairs": [],
         "inTrash": false,
         "lastEventTime": 1490392285900,
         "lastNotificationMillis": 1490392286031,
-        "lastProcessedMillis": 1523082344420,
+        "lastProcessedMillis": 1530723437949,
         "metricsUsed": [
             "~collector.points.valid"
         ],
@@ -293,11 +293,11 @@
         "tags": {
             "customerTags": []
         },
-        "target": "dmourati@box.com",
+        "target": "null@box.com",
         "targetInfo": [],
         "updateUserId": "hbaba@box.com",
-        "updated": 1523082348172,
-        "updatedEpochMillis": 1523082348172,
+        "updated": 1530723441737,
+        "updatedEpochMillis": 1530723441737,
         "updaterId": "hbaba@box.com"
     },
     {
@@ -309,8 +309,8 @@
         "condition": "default(0, sum((default(0, sum(ts('storm.http_response_code', (http_response_code='5*') and (fq_rm='box_master*get_page' or fq_rm='box_master_quarantine' or fq_rm='box_master_quarantine_policies' or fq_rm='box_master_content' or fq_rm='box_master_group_tags' or fq_rm='box_content_workflow_policy' or fq_rm='box_content_workflow_automation' or fq_rm='box_content_metadata_*')), fq_rm, http_response_code))))) / default(0, sum((default(0, sum(ts('storm.http_response_code', (fq_rm='box_master*get_page' or fq_rm='box_master_quarantine' or fq_rm='box_master_quarantine_policies' or fq_rm='box_master_content' or fq_rm='box_master_group_tags' or fq_rm='box_content_workflow_policy' or fq_rm='box_content_workflow_automation' or fq_rm='box_content_metadata_*')), fq_rm, http_response_code))))) >= 5",
         "conditionQBEnabled": false,
         "createUserId": "hbaba@box.com",
-        "created": 1523082348348,
-        "createdEpochMillis": 1523082348348,
+        "created": 1530723441874,
+        "createdEpochMillis": 1530723441874,
         "creatorId": "hbaba@box.com",
         "deleted": false,
         "displayExpression": "default(0, sum((default(0, sum(ts('storm.http_response_code', (http_response_code='5*') and (fq_rm='box_master*get_page' or fq_rm='box_master_quarantine' or fq_rm='box_master_quarantine_policies' or fq_rm='box_master_content' or fq_rm='box_master_group_tags' or fq_rm='box_content_workflow_policy' or fq_rm='box_content_workflow_automation' or fq_rm='box_content_metadata_*')), fq_rm, http_response_code))))) / default(0, sum((default(0, sum(ts('storm.http_response_code', (fq_rm='box_master*get_page' or fq_rm='box_master_quarantine' or fq_rm='box_master_quarantine_policies' or fq_rm='box_master_content' or fq_rm='box_master_group_tags' or fq_rm='box_content_workflow_policy' or fq_rm='box_content_workflow_automation' or fq_rm='box_content_metadata_*')), fq_rm, http_response_code)))))",
@@ -321,10 +321,10 @@
             "box_content_metadata_get_template",
             "box_content_metadata_get_templates"
         ],
-        "id": "1523082348348",
+        "id": "1530723441874",
         "inMaintenanceHostLabelPairs": [],
         "inTrash": false,
-        "lastProcessedMillis": 1523082297382,
+        "lastProcessedMillis": 1530723417664,
         "metricsUsed": [
             "storm.http_response_code"
         ],
@@ -343,11 +343,11 @@
                 "Bali"
             ]
         },
-        "target": "pd: 99bab06f0f934a3f93f65e228e43ad56",
+        "target": "pd: 99bab07f0f934a3f93f65e228e43ad56",
         "targetInfo": [],
         "updateUserId": "hbaba@box.com",
-        "updated": 1523082348348,
-        "updatedEpochMillis": 1523082348348,
+        "updated": 1530723441874,
+        "updatedEpochMillis": 1530723441874,
         "updaterId": "hbaba@box.com"
     },
     {
@@ -359,8 +359,8 @@
         "condition": "ts(db.running_kernel_is_default, env=live and db_pod=*) = 0",
         "conditionQBEnabled": false,
         "createUserId": "hbaba@box.com",
-        "created": 1523082348512,
-        "createdEpochMillis": 1523082348512,
+        "created": 1530723442027,
+        "createdEpochMillis": 1530723442027,
         "creatorId": "hbaba@box.com",
         "deleted": false,
         "displayExpression": "",
@@ -371,7 +371,7 @@
                 "created": "1485390198240",
                 "details": "<a class=\"ds-alert-link\" href=\"https://box.wavefront.com/u/Yw9cQS7V08\">View Alert</a>\n<br />\n<strong>First Affected: </strong>dba-mgmt6001 (db.running_kernel_is_default) [db_pod=orchestrator][db_cluster=orchestrator][productname=OpenStack_Nova][env=live][db_role=master][dc=vsv1][server_type=dba-mgmt][db_state=passive]",
                 "severity": "warn",
-                "target": "dbops+wf-warn@box.com",
+                "target": "null@box.com",
                 "type": "alert"
             },
             "canClose": false,
@@ -386,8 +386,8 @@
                 "dba-mgmt6001",
                 "app-db1016"
             ],
-            "id": "1485390362323:Running kernel is not the default boot kernel",
-            "name": "Running kernel is not the default boot kernel",
+            "id": "1485390362323:Running kernel is not the default boot kern:1",
+            "name": "Running kernel is not the default boot kern",
             "runningState": "ENDED",
             "startTime": 1485390362323,
             "table": "box",
@@ -402,11 +402,11 @@
             "app-db1007",
             "app-db1009"
         ],
-        "id": "1523082348512",
+        "id": "1530723442027",
         "inMaintenanceHostLabelPairs": [],
         "inTrash": false,
         "lastEventTime": 1485390362323,
-        "lastProcessedMillis": 1523082330436,
+        "lastProcessedMillis": 1530723429716,
         "metricsUsed": [
             "db.running_kernel_is_default"
         ],
@@ -419,7 +419,6 @@
         "severity": "WARN",
         "sortAttr": -170,
         "status": [
-            "IN_MAINTENANCE",
             "CHECKING"
         ],
         "tags": {
@@ -428,11 +427,11 @@
                 "env.live"
             ]
         },
-        "target": "dbops+wf-warn@box.com",
+        "target": "null@box.com",
         "targetInfo": [],
         "updateUserId": "hbaba@box.com",
-        "updated": 1523082348512,
-        "updatedEpochMillis": 1523082348512,
+        "updated": 1530723442027,
+        "updatedEpochMillis": 1530723442027,
         "updaterId": "hbaba@box.com"
     },
     {
@@ -444,17 +443,17 @@
         "condition": "max(ts(storm.Orion.ApiCalls.response_time)) > 2",
         "conditionQBEnabled": false,
         "createUserId": "hbaba@box.com",
-        "created": 1523082348708,
-        "createdEpochMillis": 1523082348708,
+        "created": 1530723442180,
+        "createdEpochMillis": 1530723442180,
         "creatorId": "hbaba@box.com",
         "deleted": false,
         "displayExpression": "max(ts(storm.Orion.ApiCalls.response_time)) > 2",
         "displayExpressionQBEnabled": false,
         "failingHostLabelPairs": [],
-        "id": "1523082348708",
+        "id": "1530723442180",
         "inMaintenanceHostLabelPairs": [],
         "inTrash": false,
-        "lastProcessedMillis": 1523082313914,
+        "lastProcessedMillis": 1530723395477,
         "minutes": 5,
         "name": "Orion Response time more than 2 seconds",
         "notificants": [],
@@ -463,18 +462,18 @@
         "severity": "INFO",
         "sortAttr": -190,
         "status": [
-            "FIRING"
+            "CHECKING"
         ],
         "tags": {
             "customerTags": [
                 "Orion"
             ]
         },
-        "target": "wavefront-relay@boxcom.pagerduty.com,ent-workflow-dev@box.com",
+        "target": "null@box.com",
         "targetInfo": [],
         "updateUserId": "hbaba@box.com",
-        "updated": 1523082348708,
-        "updatedEpochMillis": 1523082348708,
+        "updated": 1530723442180,
+        "updatedEpochMillis": 1530723442180,
         "updaterId": "hbaba@box.com"
     },
     {
@@ -486,8 +485,8 @@
         "condition": "sum(ts(realtime.queuedEvents.fetches.latency.all.median, env=live) > 35000000) > 2",
         "conditionQBEnabled": false,
         "createUserId": "hbaba@box.com",
-        "created": 1523082348877,
-        "createdEpochMillis": 1523082348877,
+        "created": 1530723442325,
+        "createdEpochMillis": 1530723442325,
         "creatorId": "hbaba@box.com",
         "deleted": false,
         "displayExpression": "ts(realtime.queuedEvents.fetches.latency.all.median, env=live)",
@@ -500,10 +499,10 @@
             "realtime2007",
             "realtime2008"
         ],
-        "id": "1523082348877",
+        "id": "1530723442325",
         "inMaintenanceHostLabelPairs": [],
         "inTrash": false,
-        "lastProcessedMillis": 1523082289234,
+        "lastProcessedMillis": 1530723425645,
         "metricsUsed": [
             "realtime.queuedEvents.fetches.latency.all.median"
         ],
@@ -526,11 +525,11 @@
                 "realtime"
             ]
         },
-        "target": "pd:2b7417f43da944c692711bc3920d5713,messaging-oncall@box.com",
+        "target": "pd:3b7417f43da944c692711bc3920d5713,null@box.com",
         "targetInfo": [],
         "updateUserId": "hbaba@box.com",
-        "updated": 1523082348877,
-        "updatedEpochMillis": 1523082348877,
+        "updated": 1530723442325,
+        "updatedEpochMillis": 1530723442325,
         "updaterId": "hbaba@box.com"
     },
     {
@@ -542,8 +541,8 @@
         "condition": "last(5m,sum(ts(storm.bifrost.requests.reverseFetchMessages.latency.all.median, env=live))) > 5",
         "conditionQBEnabled": false,
         "createUserId": "hbaba@box.com",
-        "created": 1523082349048,
-        "createdEpochMillis": 1523082349048,
+        "created": 1530723442469,
+        "createdEpochMillis": 1530723442469,
         "creatorId": "hbaba@box.com",
         "deleted": false,
         "displayExpression": "last(5m,sum(ts(storm.bifrost.requests.reverseFetchMessages.latency.all.median, env=live)))",
@@ -553,7 +552,7 @@
                 "created": "1444863387371",
                 "details": "<a class='ds-alert-link' href='https://box.wavefront.com/u/RSg0sPbFLq'>View Alert</a>",
                 "severity": "severe",
-                "target": "pd:2f0d52a889564ac49e6cf8b50ce57b09,messaging-oncall@box.com",
+                "target": "pd:3f0d52a889564ac49e6cf8b50ce57b09,null@box.com",
                 "type": "alert"
             },
             "canClose": false,
@@ -567,8 +566,8 @@
             "hosts": [
                 ""
             ],
-            "id": "1496860172861:Updates Page - Total ReverseFetchMessage Median Latency - HIGH",
-            "name": "Updates Page - Total ReverseFetchMessage Median Latency - HIGH",
+            "id": "1496860172861:Updates Page - Total ReverseFetchMessage Median Latency - HI:1",
+            "name": "Updates Page - Total ReverseFetchMessage Median Latency - HI",
             "runningState": "ENDED",
             "startTime": 1496860172861,
             "table": "box",
@@ -578,12 +577,12 @@
         "hostsUsed": [
             "bifrost"
         ],
-        "id": "1523082349048",
+        "id": "1530723442469",
         "inMaintenanceHostLabelPairs": [],
         "inTrash": false,
         "lastEventTime": 1496860172861,
         "lastNotificationMillis": 1496860173349,
-        "lastProcessedMillis": 1523082312582,
+        "lastProcessedMillis": 1530723440566,
         "metricsUsed": [
             "storm.bifrost.requests.reverseFetchMessages.latency.all.median"
         ],
@@ -606,11 +605,11 @@
                 "updates-page"
             ]
         },
-        "target": "pd:2f0d52a889564ac49e6cf8b50ce57b09,messaging-oncall@box.com",
+        "target": "pd:3f0d52a889564ac49e6cf8b50ce57b09,null@box.com",
         "targetInfo": [],
         "updateUserId": "hbaba@box.com",
-        "updated": 1523082349048,
-        "updatedEpochMillis": 1523082349048,
+        "updated": 1530723442469,
+        "updatedEpochMillis": 1530723442469,
         "updaterId": "hbaba@box.com"
     },
     {
@@ -622,8 +621,8 @@
         "condition": "rate(ts(\"cache-manager.exceptionCount.count\", env=\"staging\")) > 1",
         "conditionQBEnabled": false,
         "createUserId": "hbaba@box.com",
-        "created": 1523082349224,
-        "createdEpochMillis": 1523082349224,
+        "created": 1530723442603,
+        "createdEpochMillis": 1530723442603,
         "creatorId": "hbaba@box.com",
         "deleted": false,
         "displayExpression": "rate(ts(\"cache-manager.exceptionCount.count\", env=\"staging\"))",
@@ -633,10 +632,10 @@
             "staging-cacheman02",
             "staging-cacheman01"
         ],
-        "id": "1523082349224",
+        "id": "1530723442603",
         "inMaintenanceHostLabelPairs": [],
         "inTrash": false,
-        "lastProcessedMillis": 1523082304667,
+        "lastProcessedMillis": 1530723441855,
         "metricsUsed": [
             "cache-manager.exceptionCount.count"
         ],
@@ -657,11 +656,11 @@
                 "cachemanager"
             ]
         },
-        "target": "cachingd+wavefront_critical@box.com, pd:26dd44251e1440e89fdc7e4ccbe0974b",
+        "target": "null@box.com, pd:27dd44251e1440e89fdc7e4ccbe0974b",
         "targetInfo": [],
         "updateUserId": "hbaba@box.com",
-        "updated": 1523082349224,
-        "updatedEpochMillis": 1523082349224,
+        "updated": 1530723442603,
+        "updatedEpochMillis": 1530723442603,
         "updaterId": "hbaba@box.com"
     },
     {
@@ -672,8 +671,8 @@
         "alertsLastWeek": 0,
         "condition": "msum(5m, sum(ts(storm.office_online.unexpected_errors, env=live))) >= 50",
         "createUserId": "hbaba@box.com",
-        "created": 1523082349397,
-        "createdEpochMillis": 1523082349397,
+        "created": 1530723442737,
+        "createdEpochMillis": 1530723442737,
         "creatorId": "hbaba@box.com",
         "deleted": false,
         "displayExpression": "ts(storm.office_online.unexpected_errors, env=live)",
@@ -682,7 +681,7 @@
                 "created": "1443467680730",
                 "details": "<a class='ds-alert-link' href='https://box.wavefront.com/u/0bfm90W2gp'>View Alert</a>",
                 "severity": "severe",
-                "target": "pd:e06a4ea4f88347db863599bba9cbecdb",
+                "target": "pd:e07a4ea4f88347db863599bba9cbecdb",
                 "type": "alert"
             },
             "canClose": false,
@@ -696,8 +695,8 @@
             "hosts": [
                 ""
             ],
-            "id": "1499515432184:Prod - Office Online Unexpected Errors - HIGH",
-            "name": "Prod - Office Online Unexpected Errors - HIGH",
+            "id": "1499515432184:Prod - Office Online Unexpected Errors - HI:1",
+            "name": "Prod - Office Online Unexpected Errors - HI",
             "runningState": "ENDED",
             "startTime": 1499515432184,
             "table": "box",
@@ -707,12 +706,12 @@
         "hostsUsed": [
             "unknown"
         ],
-        "id": "1523082349397",
+        "id": "1530723442737",
         "inMaintenanceHostLabelPairs": [],
         "inTrash": false,
         "lastEventTime": 1499515432184,
         "lastNotificationMillis": 1499515432434,
-        "lastProcessedMillis": 1523082310631,
+        "lastProcessedMillis": 1530723383157,
         "metricsUsed": [
             "storm.office_online.unexpected_errors"
         ],
@@ -733,11 +732,128 @@
                 "Partners"
             ]
         },
-        "target": "pd:e06a4ea4f88347db863599bba9cbecdb",
+        "target": "pd:e07a4ea4f88347db863599bba9cbecdb",
         "targetInfo": [],
         "updateUserId": "hbaba@box.com",
-        "updated": 1523082349397,
-        "updatedEpochMillis": 1523082349397,
+        "updated": 1530723442737,
+        "updatedEpochMillis": 1530723442737,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "sum(ts(kube.metrics.deployment_status_replicas_available, namespace=collections-service-dev)) < sum(ts(kube.metrics.deployment_status_replicas, namespace=collections-service-dev))",
+        "createUserId": "hbaba@box.com",
+        "created": 1530723442872,
+        "createdEpochMillis": 1530723442872,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "sum(ts(kube.metrics.deployment_status_replicas_available, namespace=collections-service-dev))",
+        "failingHostLabelPairs": [],
+        "id": "1530723442872",
+        "inTrash": false,
+        "includeObsoleteMetrics": false,
+        "lastProcessedMillis": 1530723402696,
+        "minutes": 10,
+        "name": "Collections Dev Pod Count Low",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "severity": "SEVERE",
+        "sortAttr": -160,
+        "status": [
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": [
+                "collections-service",
+                "core-frameworks"
+            ]
+        },
+        "target": "pd: c6cce4d0d93345a6ab0b76ce1a3b1498",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1530723442872,
+        "updatedEpochMillis": 1530723442872,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "rate(sum(ts(kube.metrics.pod_container_status_restarts, namespace=collections-service-dev ))) > 0",
+        "createUserId": "hbaba@box.com",
+        "created": 1530723443002,
+        "createdEpochMillis": 1530723443002,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "rate(sum(ts(kube.metrics.pod_container_status_restarts, namespace=collections-service-dev )))",
+        "failingHostLabelPairs": [],
+        "id": "1530723443002",
+        "inTrash": false,
+        "includeObsoleteMetrics": false,
+        "lastProcessedMillis": 1530723439745,
+        "minutes": 1,
+        "name": "Collections Dev Pod Restarting",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "severity": "SEVERE",
+        "sortAttr": -160,
+        "status": [
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": [
+                "collections-service",
+                "core-frameworks"
+            ]
+        },
+        "target": "pd: c5cce4d0d93345a6ab0b77ce0a3b1498",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1530723443002,
+        "updatedEpochMillis": 1530723443002,
+        "updaterId": "hbaba@box.com"
+    },
+    {
+        "alertsLastDay": 0,
+        "alertsLastMonth": 0,
+        "alertsLastWeek": 0,
+        "condition": "max(((sum(rate(ts(proc.stat.cpu, namespace=\"collections-service-dev\"  and type=used)), pod_name) /100) / (sum(taggify(ts(kube.metrics.pod_container_resource_requests_cpu_cores, namespace=\"collections-service-dev\"),  tagk, pod, pod_name, \"\", \"\"), pod_name)) * 100)) > 70",
+        "createUserId": "hbaba@box.com",
+        "created": 1530723443146,
+        "createdEpochMillis": 1530723443146,
+        "creatorId": "hbaba@box.com",
+        "deleted": false,
+        "displayExpression": "(sum(rate(ts(proc.stat.cpu, namespace=\"collections-service-dev\" and type=used)), pod_name) /100) / (sum(taggify(ts(kube.metrics.pod_container_resource_requests_cpu_cores, namespace=\"collections-service-dev\" ),  tagk, pod, pod_name, \"\", \"\"), pod_name)) * 100",
+        "failingHostLabelPairs": [],
+        "id": "1530723443146",
+        "inTrash": false,
+        "includeObsoleteMetrics": false,
+        "lastProcessedMillis": 1530723431368,
+        "minutes": 2,
+        "name": "Collections Dev High CPU",
+        "notificants": [],
+        "pointsScannedAtLastQuery": 0,
+        "prefiringHostLabelPairs": [],
+        "severity": "WARN",
+        "sortAttr": -170,
+        "status": [
+            "CHECKING"
+        ],
+        "tags": {
+            "customerTags": [
+                "collections-service",
+                "core-frameworks"
+            ]
+        },
+        "target": "pd: c5cce4d0d93345a6ab0b77ce0a3b1498",
+        "targetInfo": [],
+        "updateUserId": "hbaba@box.com",
+        "updated": 1530723443146,
+        "updatedEpochMillis": 1530723443146,
         "updaterId": "hbaba@box.com"
     }
 ]
