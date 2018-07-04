@@ -13,6 +13,8 @@ TODO: Not complete yet TBD
 #### Fixed
 - The Wavefront apiToken secret was leaking into the git repo commit messages in
 git integration mode. [#23](https://github.com/box/wavectl/issues/23)
+- Recompiling all documentation (<repo_root>/doc/sphinx$ make all) does not
+overwrite the ~/.wavectl/config file with dummy values anymore.
 
 
 ## Supported Release [0.2.0]

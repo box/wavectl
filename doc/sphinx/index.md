@@ -13,6 +13,7 @@
    GitIntegration.md
    README.md
    RepetitiveEditing.md
+   Templating.md
    WavectlConfig.md
 ```
 
