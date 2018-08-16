@@ -14,13 +14,13 @@ Wavefront already keeps the change history of [alerts](https://docs.wavefront.co
 
 Passing `--inGit` to `pull` command initalizes a git repository in the pulled directory, if the directory gets created with the `pull` command.
 
-``` 
+```
   $ wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
 ```
 
 A git repo is created in the newly created /tmp/GitIntegrationPull/alerts directory.
 
-``` 
+```
   $ git -C /tmp/GitIntegrationPull/alerts status
   On branch master
   nothing to commit, working tree clean
@@ -28,15 +28,15 @@ A git repo is created in the newly created /tmp/GitIntegrationPull/alerts direct
 
 Each `pull` command creates a new commit with the changes pulled from the Wavefront server at that time.
 
-``` 
+```
   $ git -C /tmp/GitIntegrationPull/alerts log --oneline
-  0950b24 Added files due to pull <resource> cmd:/Users/hakan/src/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
-  e5ea05a Initial commit with the README.md file
+  70a7370 Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
+  69b5015 Initial commit with the README.md file
 ```
 
 If you execute a long running daemon executing periodic pulls from Wavefront, an extensive git history can be built. The git history will correspond to users' edits to alerts and dashboards.
 
-``` 
+```
  while true; do
     wavectl pull <someDir> alert
     wavectl pull <someDir> dashboard
@@ -50,7 +50,7 @@ For example:
 
 ### When was an a particular alert created ?
 
-``` 
+```
   $ git -C /tmp/GitIntegrationPull/alerts log $(ls /tmp/GitIntegrationPull/alerts | sort | head -n 1)
   commit 0950b24268c4b68cd4090c04a38d2ebcd67edd74
   Author: Hakan Baba <you@example.com>
@@ -61,11 +61,11 @@ For example:
 
 ### When were each alert snoozed ?
 
-``` 
+```
   $ git -C /tmp/GitIntegrationPull/alerts log -S snoozed
-  commit 0950b24268c4b68cd4090c04a38d2ebcd67edd74
+  commit 70a7370e3ececfd9dfb0471b1d5e8ff662444909
   Author: Hakan Baba <you@example.com>
-  Date:   Fri Aug 10 23:11:23 2018 -0700
+  Date:   Wed Jul 4 10:51:58 2018 -0700
 
       Added files due to pull <resource> cmd:/Users/hakan/src/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
 ```
@@ -80,19 +80,19 @@ It is always good practice to inspect the changes to alerts and dashboards befor
 
 Using the same example from the [repetitive editing doc](RepetitiveEditing.md), we first pull the alerts matching a regular expression. But this time we use the git integration command line parameter `--inGit,-g`
 
-``` 
+```
   $ wavectl pull --inGit /tmp/GitIntegrationPush/alerts alert --match "proc\."
 ```
 
 Then the local modifications are executed:
 
-``` 
+```
   $ find /tmp/GitIntegrationPush -type f | xargs sed -i -e 's/proc\./host.proc./g'
 ```
 
 See the modifications to alerts that are going to be pushed to Wavefront:
 
-``` 
+```
   $ git -C /tmp/GitIntegrationPush/alerts diff HEAD
   diff --git a/1530723441304.alert b/1530723441304.alert
   index a1bb891..ec02df7 100644
@@ -131,24 +131,24 @@ See the modifications to alerts that are going to be pushed to Wavefront:
 
 Submit your changes to the local repo:
 
-``` 
+```
   $ git -C /tmp/GitIntegrationPush/alerts commit -a -m "proc. is replaced with host.proc."
-  [master 802a197] proc. is replaced with host.proc.
-   4 files changed, 21 insertions(+), 21 deletions(-)
-   rewrite 1530723443146.alert (67%)
+  [master e11a3a2] proc. is replaced with host.proc.
+   4 files changed, 22 insertions(+), 22 deletions(-)
+   rewrite 1530723443146.alert (64%)
 ```
 
 > NOTE: If you are using git integration, `wavectl` will not let you push unless you have committed your changes to the repo. This behavior is like a safeguard to ensure that the user is fully aware of what he is writing to Wavefont via `wavectl push`. Asking the user to commit his local changes, serves to ensure that she has inspected the diff and is OK with the modifications.
 
 Lastly, push your local modifications to Wavefront.
 
-``` 
+```
   $ wavectl push --inGit /tmp/GitIntegrationPush/alerts alert
   Replaced alert(s):
-  ID               NAME                                                       STATUS    SEVERITY    
-  1530723441304    Kubernetes - Node Network Utilization - HIGH (Prod)            WARN    
-  1530723441442    Kubernetes - Node Cpu Utilization - HIGH (Prod)                WARN    
-  1530723441589    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)        WARN    
+  ID               NAME                                                       STATUS    SEVERITY
+  1530723441304    Kubernetes - Node Network Utilization - HIGH (Prod)            WARN
+  1530723441442    Kubernetes - Node Cpu Utilization - HIGH (Prod)                WARN
+  1530723441589    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)        WARN
   1530723443146    Collections Dev High CPU                                       WARN
 ```
 
