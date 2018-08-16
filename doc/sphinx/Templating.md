@@ -68,11 +68,15 @@ download the alerts.
     :prompt:
 ```
 
+After pulling the alerts you can see them in the target directory.
+
 ```eval_rst
  .. program-output:: ls /tmp/Templating/alerts
     :returncode: 0
     :prompt:
 ```
+
+They are in json format:
 
 ```eval_rst
  .. program-output:: cat /tmp/Templating/alerts/*
@@ -83,7 +87,7 @@ download the alerts.
 ```
 
 \> NOTE: In this example there are a small number of alerts. All the concepts
-and commands discussed here, easily expand to many more alerts and dashboards.
+and commands discussed here easily expand to many more alerts and dashboards.
 We kept the data small to have a easy to follow example.
 
 \#\#\# Convert the json files of alerts into a templating languge.
