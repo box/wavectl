@@ -30,12 +30,20 @@ With that observation, the first step to generate the alert templates is to down
 
 ``` 
   $ wavectl pull /tmp/Templating/alerts alert -t collections-service
+```
 
+After pulling the alerts you can see them in the target directory.
+
+``` 
   $ ls /tmp/Templating/alerts
   1530723442872.alert
   1530723443002.alert
   1530723443146.alert
+```
 
+They are in json format:
+
+``` 
   $ cat /tmp/Templating/alerts/*
   {
       "condition": "sum(ts(kube.metrics.deployment_status_replicas_available, namespace=collections-service-dev)) < sum(ts(kube.metrics.deployment_status_replicas, namespace=collections-service-dev))",
@@ -55,7 +63,7 @@ With that observation, the first step to generate the alert templates is to down
   ...
 ```
 
-> NOTE: In this example there are a small number of alerts. All the concepts and commands discussed here, easily expand to many more alerts and dashboards. We kept the data small to have a easy to follow example.
+> NOTE: In this example there are a small number of alerts. All the concepts and commands discussed here easily expand to many more alerts and dashboards. We kept the data small to have a easy to follow example.
 
 ### Convert the json files of alerts into a templating languge.
 
@@ -63,7 +71,7 @@ Once we have the json files downloaded, we need to decide on a templating tool. 
 
 Converting json files into jsonnet templating language is a one time setup step for templates. It requires jsonnet lanuage know-how. In this example, the before and after json -\> jsonnet files would looke like this:
 
-# TODO: We need to add sed program execution to make the json files into jsonnet automatically.
+# TODO: We need to add sed calls to make the json files into jsonnet automatically. ALso we need to compile the resulting jsonnet file to make sure it is syntactically correct.
 
 ## Future Work.
 
