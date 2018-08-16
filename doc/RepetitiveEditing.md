@@ -23,9 +23,9 @@ See the pulled alerts, dashboards.
 ``` 
   $ find /tmp/RepetitiveEditing -type f
   /tmp/RepetitiveEditing/alerts/1530723441304.alert
-  /tmp/RepetitiveEditing/alerts/1530723441442.alert
   /tmp/RepetitiveEditing/alerts/1530723441589.alert
   /tmp/RepetitiveEditing/alerts/1530723443146.alert
+  /tmp/RepetitiveEditing/alerts/1530723441442.alert
   /tmp/RepetitiveEditing/dashboards/metadata-perfpod.dashboard
   /tmp/RepetitiveEditing/dashboards/octoproxy.dashboard
 ```
@@ -36,12 +36,12 @@ See the usage of the metrics starting with `proc.` in pulled alerts, dashboards.
   $ find /tmp/RepetitiveEditing -type f | xargs grep "proc."
   /tmp/RepetitiveEditing/alerts/1530723441304.alert:    "condition": "ts(proc.net.percent,server_type=\"compute-*\" and env=\"live\") > 80",
   /tmp/RepetitiveEditing/alerts/1530723441304.alert:    "displayExpression": "ts(proc.net.percent,server_type=\"compute-*\" and env=\"live\")",
-  /tmp/RepetitiveEditing/alerts/1530723441442.alert:    "condition": "ts(proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"live\") > 80",
-  /tmp/RepetitiveEditing/alerts/1530723441442.alert:    "displayExpression": "ts(proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"dev\")",
   /tmp/RepetitiveEditing/alerts/1530723441589.alert:    "condition": "ts(proc.meminfo.percentage_swapused,server_type=\"compute-*\" and env=\"live\") > 10",
   /tmp/RepetitiveEditing/alerts/1530723441589.alert:    "displayExpression": "ts(proc.meminfo.percentage_swapused,server_type=\"compute-*\" and env=\"live\")",
   /tmp/RepetitiveEditing/alerts/1530723443146.alert:    "condition": "max(((sum(rate(ts(proc.stat.cpu, namespace=\"collections-service-dev\"  and type=used)), pod_name) /100) / (sum(taggify(ts(kube.metrics.pod_container_resource_requests_cpu_cores, namespace=\"collections-service-dev\"),  tagk, pod, pod_name, \"\", \"\"), pod_name)) * 100)) > 70",
   /tmp/RepetitiveEditing/alerts/1530723443146.alert:    "displayExpression": "(sum(rate(ts(proc.stat.cpu, namespace=\"collections-service-dev\" and type=used)), pod_name) /100) / (sum(taggify(ts(kube.metrics.pod_container_resource_requests_cpu_cores, namespace=\"collections-service-dev\" ),  tagk, pod, pod_name, \"\", \"\"), pod_name)) * 100",
+  /tmp/RepetitiveEditing/alerts/1530723441442.alert:    "condition": "ts(proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"live\") > 80",
+  /tmp/RepetitiveEditing/alerts/1530723441442.alert:    "displayExpression": "ts(proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"dev\")",
   /tmp/RepetitiveEditing/dashboards/metadata-perfpod.dashboard:                                    "query": "ts(\"proc.kernel.entropy_avail\", host=${metadata_server})",
   /tmp/RepetitiveEditing/dashboards/metadata-perfpod.dashboard:                                    "query": "ts(proc.stat.cpu.percentage_used, ${PerfPod} and host=${metadata_server})",
   /tmp/RepetitiveEditing/dashboards/metadata-perfpod.dashboard:                                    "query": "ts(proc.stat.cpu.percentage_used, ${PerfPod} and host=${metadata_db02})",
@@ -64,12 +64,12 @@ Check the changes you have make
   $ find /tmp/RepetitiveEditing -type f | xargs grep "host.proc."
   /tmp/RepetitiveEditing/alerts/1530723441304.alert:    "condition": "ts(host.proc.net.percent,server_type=\"compute-*\" and env=\"live\") > 80",
   /tmp/RepetitiveEditing/alerts/1530723441304.alert:    "displayExpression": "ts(host.proc.net.percent,server_type=\"compute-*\" and env=\"live\")",
-  /tmp/RepetitiveEditing/alerts/1530723441442.alert:    "condition": "ts(host.proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"live\") > 80",
-  /tmp/RepetitiveEditing/alerts/1530723441442.alert:    "displayExpression": "ts(host.proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"dev\")",
   /tmp/RepetitiveEditing/alerts/1530723441589.alert:    "condition": "ts(host.proc.meminfo.percentage_swapused,server_type=\"compute-*\" and env=\"live\") > 10",
   /tmp/RepetitiveEditing/alerts/1530723441589.alert:    "displayExpression": "ts(host.proc.meminfo.percentage_swapused,server_type=\"compute-*\" and env=\"live\")",
   /tmp/RepetitiveEditing/alerts/1530723443146.alert:    "condition": "max(((sum(rate(ts(host.proc.stat.cpu, namespace=\"collections-service-dev\"  and type=used)), pod_name) /100) / (sum(taggify(ts(kube.metrics.pod_container_resource_requests_cpu_cores, namespace=\"collections-service-dev\"),  tagk, pod, pod_name, \"\", \"\"), pod_name)) * 100)) > 70",
   /tmp/RepetitiveEditing/alerts/1530723443146.alert:    "displayExpression": "(sum(rate(ts(host.proc.stat.cpu, namespace=\"collections-service-dev\" and type=used)), pod_name) /100) / (sum(taggify(ts(kube.metrics.pod_container_resource_requests_cpu_cores, namespace=\"collections-service-dev\" ),  tagk, pod, pod_name, \"\", \"\"), pod_name)) * 100",
+  /tmp/RepetitiveEditing/alerts/1530723441442.alert:    "condition": "ts(host.proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"live\") > 80",
+  /tmp/RepetitiveEditing/alerts/1530723441442.alert:    "displayExpression": "ts(host.proc.stat.cpu.percentage_used,server_type=\"compute-*\" and env=\"dev\")",
   /tmp/RepetitiveEditing/dashboards/metadata-perfpod.dashboard:                                    "query": "ts(\"host.proc.kernel.entropy_avail\", host=${metadata_server})",
   /tmp/RepetitiveEditing/dashboards/metadata-perfpod.dashboard:                                    "query": "ts(host.proc.stat.cpu.percentage_used, ${PerfPod} and host=${metadata_server})",
   /tmp/RepetitiveEditing/dashboards/metadata-perfpod.dashboard:                                    "query": "ts(host.proc.stat.cpu.percentage_used, ${PerfPod} and host=${metadata_db02})",

@@ -8,7 +8,7 @@ the alert and dashboard arsenals of our application owners grow organically in
 an ad-hoc way.
 
 Different teams have re-discovered almost identical best practices. Various
-different ways to formuate the same query have independently spread in
+different ways of formulating the same query have independently spread in
 the organization. For example, we have seen different teams use slightly
 different metrics and conditions for their high CPU consumption alerts.
 Sometimes we discover a more robust, improved way of building a query. That
@@ -27,6 +27,8 @@ easily expand to dashboards too.
 
 \#\# Generate the template files first time.
 
+\#\#\# Download json files of alerts from Wavefront.
+
 Wavefront GUI has really powerful user experience.
 
 \- \[Charts\]\(https://docs.wavefront.com/charts.html\) react instantly to
@@ -41,9 +43,9 @@ helping to avoid false positives and negatives.
 metric name completion.
 
 Because of these and many other features, we strongly believe the Wavefront GUI
-is the right medium for developing new alerts and dashboards. If there is a need to
-templetize an alert, that alert would have been implemented via the Wavefront GUI
-already.
+is the right medium for developing new alerts and dashboards. If there is a
+need to templetize an alert, an initial version of that alert would have been
+implemented via the Wavefront GUI already.
 
 With that observation, the first step to generate the alert templates is to
 download the json representation of the alerts from Wavefront.  In this
@@ -84,6 +86,8 @@ download the alerts.
 and commands discussed here, easily expand to many more alerts and dashboards.
 We kept the data small to have a easy to follow example.
 
+\#\#\# Convert the json files of alerts into a templating languge.
+
 Once we have the json files downloaded, we need to decide on a templating tool.
 Since we are working on json files, in this example, we have choosen
 \[jsonnet\]\(https://jsonnet.org/\). jsonnet is a very powerful json templating
@@ -94,6 +98,18 @@ the main idea stays the same. \[Mustache\]\(https://mustache.github.io/\) or
 \[sed\]\(https://www.gnu.org/software/sed/\) commands are suitable for this
 task.
 
+Converting json files into jsonnet templating language is a one time setup step
+for templates. It requires jsonnet lanuage know-how. In this example, the
+before and after json -> jsonnet files would looke like this:
+
+
+#TODO: We need to add sed calls to make the json files into jsonnet
+automatically. ALso we need to compile the resulting jsonnet file to make
+sure it is syntactically correct.
+
+
+
+\#\# Future Work.
 
 
 ////////////////////////////
@@ -115,15 +131,12 @@ templated alerts and write them back to dashboard.
 \5. Once a team creates their alerts from a template they need to execute create.
 
 
-ar
+
 
 Not everything is automated, some manual command execution is necessary. The users
 of the templates need to spend time to build the template, decide on the variables
 and best tool to use
 
-
-may need to and the implementation may
-need to consider various use cases like:
 
 
 

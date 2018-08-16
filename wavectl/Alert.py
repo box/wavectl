@@ -46,6 +46,7 @@ class Alert(with_metaclass(Meta, Resource)):
         "event",
         "failingHostLabelPairs",
         "hostsUsed",
+        "includeObsoleteMetrics",
         "inMaintenanceHostLabelPairs",
         "inTrash",
         "lastEventTime",
