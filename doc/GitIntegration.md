@@ -30,8 +30,8 @@ Each `pull` command creates a new commit with the changes pulled from the Wavefr
 
 ``` 
   $ git -C /tmp/GitIntegrationPull/alerts log --oneline
-  bd540fc Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
-  9537b0e Initial commit with the README.md file
+  aef2e4c Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
+  38aee33 Initial commit with the README.md file
 ```
 
 If you execute a long running daemon executing periodic pulls from Wavefront, an extensive git history can be built. The git history will correspond to users' edits to alerts and dashboards.
@@ -52,9 +52,9 @@ For example:
 
 ``` 
   $ git -C /tmp/GitIntegrationPull/alerts log $(ls /tmp/GitIntegrationPull/alerts | sort | head -n 1)
-  commit bd540fc31eeaa820cf17483201155290b3d41ec8
+  commit aef2e4c24cfdb1b2adaa735a554687a983af9aa7
   Author: Hakan Baba <you@example.com>
-  Date:   Thu Aug 16 11:12:39 2018 -0700
+  Date:   Tue Aug 21 11:41:32 2018 -0700
 
       Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
 ```
@@ -63,9 +63,9 @@ For example:
 
 ``` 
   $ git -C /tmp/GitIntegrationPull/alerts log -S snoozed
-  commit bd540fc31eeaa820cf17483201155290b3d41ec8
+  commit aef2e4c24cfdb1b2adaa735a554687a983af9aa7
   Author: Hakan Baba <you@example.com>
-  Date:   Thu Aug 16 11:12:39 2018 -0700
+  Date:   Tue Aug 21 11:41:32 2018 -0700
 
       Added files due to pull <resource> cmd:/Users/hbaba/box/src/skynet/wavectl/doc/bin/wavectl pull --inGit /tmp/GitIntegrationPull/alerts alert
 ```
@@ -133,7 +133,7 @@ Submit your changes to the local repo:
 
 ``` 
   $ git -C /tmp/GitIntegrationPush/alerts commit -a -m "proc. is replaced with host.proc."
-  [master 3129b75] proc. is replaced with host.proc.
+  [master 9ffa9c0] proc. is replaced with host.proc.
    4 files changed, 21 insertions(+), 21 deletions(-)
    rewrite 1530723443146.alert (67%)
 ```
