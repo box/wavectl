@@ -8,7 +8,7 @@ RUN yum erase -y git
 # The tools are mostly for tests, documentation generation to run.
 RUN yum install -y epel-release \
     && yum-config-manager  --add-repo https://copr.fedorainfracloud.org/coprs/randomvariable/jsonnet/repo/epel-7/randomvariable-jsonnet-epel-7.repo \
-    && yum install -y jsonnet
+    && yum install -y jsonnet \
     && yum install -y https://centos7.iuscommunity.org/ius-release.rpm \
     && yum install -y python-pip python36u python36u-pip jq git2u \
     && wget https://github.com/jgm/pandoc/releases/download/2.2.1/pandoc-2.2.1-linux.tar.gz \
