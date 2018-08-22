@@ -7,7 +7,7 @@ RUN yum erase -y git
 # Install both python2 and 3 and other required tools.
 # The tools are mostly for tests, documentation generation to run.
 RUN yum install -y epel-release \
-    && yum-config-manager  --add-repo https://copr.fedorainfracloud.org/coprs/randomvariable/jsonnet/repo/epel-7/randomvariable-jsonnet-epel-7.repo
+    && yum-config-manager  --add-repo https://copr.fedorainfracloud.org/coprs/randomvariable/jsonnet/repo/epel-7/randomvariable-jsonnet-epel-7.repo \
     && yum install -y jsonnet
     && yum install -y https://centos7.iuscommunity.org/ius-release.rpm \
     && yum install -y python-pip python36u python36u-pip jq git2u \
