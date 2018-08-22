@@ -15,7 +15,7 @@ Sometimes we discover a more robust, improved way of building a query. That
 knowledge does not spread across teams fast enough to quickly benefit the
 entire organization. With these concerns, we thought to add more structure to
 our Wavefront state and experimented with templating using \`wavectl.\` In this
-document we give a brief introduction how \`wavectl\` can be used for simple,
+document we give a brief introduction how \`wavectl\` can be used for simple
 templating.
 
 Templated alerts, dashboards can be very a comprehensive feature and its
@@ -26,6 +26,31 @@ focus on only templated alerts for brevity reasons. The commands and capabilitie
 easily expand to dashboards too.
 
 \#\# Generate the template files first time.
+
+\#\#\# Choose which alerts to templetize.
+
+Some problematic observations are common in various applications. For example
+high cpu, memory... consumption. With containers and
+\[Kubernetes\]\(https://kubernetes.io/\) orchestration framework, we get some
+more additional common observations like:
+
+\- Too many container restarts.
+
+\- Too many Pod restarts.
+
+\- Too many Pods stuck at an unhealthy state.
+
+\- Pods getting to close to their ResourceQuota usage.
+
+\- ...
+
+In your organization, first, you need to identify some common observations that
+would add value to numerous teams. The purpose of an alert templating exercise
+should be to simplify and improve many teams' monitoring capabilities. Once you
+select a common observation, you may discover distinct Wavefront alerts that
+detect the same problem.  They may be implemented differently or may not
+maintained similarly. Those would be good candidates for templetizing.
+
 
 \#\#\# Download json files of alerts from Wavefront.
 
@@ -106,11 +131,37 @@ Converting json files into jsonnet templating language is a one time setup step
 for templates. It requires jsonnet lanuage know-how. In this example, the
 before and after json -> jsonnet files would looke like this:
 
+```eval_rst
+ .. program-output:: alertToTemplate.sh >/dev/null 2>&1
+    :returncode: 0
+    :shell:
+```
 
-#TODO: We need to add sed calls to make the json files into jsonnet
-automatically. ALso we need to compile the resulting jsonnet file to make
-sure it is syntactically correct.
+\#\#\#\# Alert's json file:
 
+```eval_rst
+ .. program-output:: ls /tmp/Templating/alerts/*.alert| head -n 1 | xargs cat
+    :returncode: 0
+    :shell:
+```
+
+\#\#\#\# The corresponding jsonnet template:
+
+We have replaced the hardcoded values for a specific service, with variables
+that can be overwritten at template complie time. For example, namespace, tag
+and pagerDuty key.
+
+```eval_rst
+ .. program-output:: ls /tmp/Templating/alertTemplates/*.jsonnet | head -n 1 | xargs cat
+    :returncode: 0
+    :shell:
+```
+
+Once this transformation is done, you get the template files. They can be reused
+to generate Wavefront alerts later on.
+
+
+\#\# Generate a new set of alerts from templates.
 
 
 \#\# Future Work.
