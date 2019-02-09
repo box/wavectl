@@ -19,10 +19,10 @@ For example:
 ``` 
   $ wavectl show alert
   ID               NAME                                                                                     STATUS                              SEVERITY    
-  1523082347619    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
-  1523082347824    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
-  1523082348005    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN      
-  1523082348172    Wavefront Freshness                                                                      CHECKING                            WARN      
+  1530723441304    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
+  1530723441442    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
+  1530723441589    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN      
+  1530723441737    Wavefront Freshness                                                                      CHECKING                            WARN      
   ...
 ```
 
@@ -34,7 +34,7 @@ For example:
 
 ``` 
   $ wavectl show alert | grep FIRING
-  1523082348708    Orion Response time more than 2 seconds                                                  FIRING                              INFO
+  1530723442180    Orion Response time more than 2 seconds                                                  FIRING                              INFO
 ```
 
 This could be used from a script too. For example, an operator may want to ensure no alerts from "kubernetes" are firing before executing a script that is going to downtime one of the kubernetes control plane hosts.
@@ -43,7 +43,7 @@ This could be used from a script too. For example, an operator may want to ensur
 
 ``` 
   $ wavectl show --no-header alert | wc -l
-        11
+        14
 ```
 
 ## Inspect all attributes of alerts, dashboards.
@@ -56,7 +56,7 @@ In addition to printing one line summaries the `show` command can also print det
       "additionalInformation": "This alert tracks the used network bandwidth percentage for all the compute-* (compute-master and compute-node) machines. If the cpu utilization exceeds 80%, this alert fires.",
       "condition": "ts(proc.net.percent,server_type=\"compute-*\" and env=\"live\") > 80",
       "displayExpression": "ts(proc.net.percent,server_type=\"compute-*\" and env=\"live\")",
-      "id": "1523082347619",
+      "id": "1530723441304",
       "minutes": 2,
       "name": "Kubernetes - Node Network Utilization - HIGH (Prod)",
       "resolveAfterMinutes": 2,
@@ -67,7 +67,7 @@ In addition to printing one line summaries the `show` command can also print det
               "skynet"
           ]
       },
-      "target": "pd: 05fe8ebacf8c44e881ea2f6e44dbf2d2"
+      "target": "pd: 07fe9ebacf8c44e881ea2f6e44dbf2d2"
   }
   {
       "additionalInformation": "This alert tracks the used cpu percentage for all the compute-* (compute-master and compute-node) machines. If the cpu utilization exceeds 80%, this alert fires.",
