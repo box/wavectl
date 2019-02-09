@@ -245,7 +245,8 @@ class Test(util.TestMutate):
                 # In order to make the working tree dirty we commit the file
                 # and make a local modification on it.
                 r.index.commit(
-                    "Initial commit of {0} file".format(newFileName))
+                    "Initial commit of {0} file".format(newFileName),
+                    skip_hooks=True)
 
                 fp = os.path.join(d, dirtySubdirName, newFileName)
                 with open(fp, "r+") as f:
