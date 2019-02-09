@@ -443,7 +443,7 @@ class TestPullMutate(Test):
         with open(p, "w") as f:
             f.write("This is a repo to manage wavefront resources.")
         r.index.add([p])
-        r.index.commit("Initial commit with the README.md file")
+        r.index.commit("Initial commit with the README.md file",skip_hooks=True)
 
     def addNewFileToRepo(self, r, n, subdir=""):
         """Adds a new file named "n" to the index in the repo. By default the
@@ -510,7 +510,7 @@ class TestPullMutate(Test):
             n = "newFile"
             self.addNewFileToRepo(r, n)
 
-            r.index.commit("Initial commit of {} file".format(n))
+            r.index.commit("Initial commit of {} file".format(n),skip_hooks=True)
 
             # After committing the following changes will be local modification that
             # are not staged yet.
