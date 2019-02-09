@@ -475,6 +475,7 @@
         "severity": "INFO",
         "sortAttr": -190,
         "status": [
+            "FIRING",
             "CHECKING"
         ],
         "systemOwned": false,
