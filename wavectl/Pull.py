@@ -83,7 +83,7 @@ class PullCommand(BaseWavefrontCommand):
             f.write("This is a repo to manage wavefront resources.")
 
         r.index.add([p])
-        r.index.commit("Initial commit with the README.md file")
+        r.index.commit("Initial commit with the README.md file", skip_hooks=True)
 
         assert(len(r.heads) > 0 and "The initial commit should create a master head")
         assert(r.active_branch.name == "master" and "unexpected active branch")

@@ -9,12 +9,16 @@ this project adheres to [Semantic Versioning](http://semver.org).
 TODO: Not complete yet TBD
 
 #### Added
+- First part of the Templating tutorial
 
 #### Fixed
 - The Wavefront apiToken secret was leaking into the git repo commit messages in
 git integration mode. [#23](https://github.com/box/wavectl/issues/23)
 - Recompiling all documentation (<repo_root>/doc/sphinx$ make all) does not
 overwrite the ~/.wavectl/config file with dummy values anymore.
+- Commits executed in wavectl do not execute post-commit hooks of the user
+anymore. The user can have all kinds of commit hooks. Wavectl should be skipping
+them.
 
 
 ## Supported Release [0.2.0]
@@ -29,4 +33,3 @@ Initial release of the `wavectl` project
 <!-- #### Added -->
 
 <!-- #### Fixed -->
-

@@ -39,3 +39,4 @@ directory:
 ./create_test_fixtures.py <wavefront-server-url> <wavefront-server-api-token> dashboard TestDashboards.json TestDashboards.json
 ```
 
+An example for `<wavefront-server-url>` is `https://try.wavefront.com`

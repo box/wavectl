@@ -95,7 +95,8 @@ class Test(util.TestPull):
                 # In order to make the working tree dirty we commit the file
                 # and make a local modification on it.
                 r.index.commit(
-                    "Initial commit of {0} file".format(newFileName))
+                    "Initial commit of {0} file".format(newFileName),
+                    skip_hooks=True)
 
                 # File1 has local modifications in a separate subdir from the
                 # actual pull directory.
@@ -195,7 +196,8 @@ class Test(util.TestPull):
                         ': '))
             r.index.add([f.name])
             r.index.commit("Modified the file: {0}".format(
-                uniqueId + rt.fileExtension()))
+                uniqueId + rt.fileExtension()),
+                skip_hooks=True)
 
             assert(not r.is_dirty())
 
