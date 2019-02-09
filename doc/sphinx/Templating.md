@@ -163,37 +163,29 @@ to generate Wavefront alerts later on.
 
 \#\# Generate a new set of alerts from templates.
 
+TODO: Add this section
+
 
 \#\# Future Work.
 
-
-////////////////////////////
-
-NOTES:
-
-\1. Wavefront alerts, dashboards may deviate from templates if users modify them in GUI.
-   \1. There is no automated process that will continuously equate the templates
-   with the state in Wavefront.
-\2. Template generation can be manual. The programmers are free to use any templating
-language or tooling to convert the json files into templates. We have tried jsonnet,
-python mustashe template solutions. Some other teammembers have also wrote simple
-sed commands to convert into templates.
-\3. Wavectl is quite opinioted about the file extensions and file names. One may
-prefer to use the alert name itself as the name of the template. Doing that
-requires manual work.
-\4. In order to change a threshold, the team needs to re-generate the whole
-templated alerts and write them back to dashboard.
-\5. Once a team creates their alerts from a template they need to execute create.
+TODO: Add this section
 
 
 
-
-Not everything is automated, some manual command execution is necessary. The users
-of the templates need to spend time to build the template, decide on the variables
-and best tool to use
-
-
-
-
-
-
+<!-- NOTES: -->
+<!-- \1. Wavefront alerts, dashboards may deviate from templates if users modify them in GUI. -->
+   <!-- \1. There is no automated process that will continuously equate the templates -->
+   <!-- with the state in Wavefront. -->
+<!-- \2. Template generation can be manual. The programmers are free to use any templating -->
+<!-- language or tooling to convert the json files into templates. We have tried jsonnet, -->
+<!-- python mustashe template solutions. Some other teammembers have also wrote simple -->
+<!-- sed commands to convert into templates. -->
+<!-- \3. Wavectl is quite opinioted about the file extensions and file names. One may -->
+<!-- prefer to use the alert name itself as the name of the template. Doing that -->
+<!-- requires manual work. -->
+<!-- \4. In order to change a threshold, the team needs to re-generate the whole -->
+<!-- templated alerts and write them back to dashboard. -->
+<!-- \5. Once a team creates their alerts from a template they need to execute create. -->
+<!-- \6. Not everything is automated, some manual command execution is necessary. The users -->
+<!-- of the templates need to spend time to build the template, decide on the variables -->
+<!-- and best tool to use -->
