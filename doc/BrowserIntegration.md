@@ -15,9 +15,9 @@ For example, the following command list all alerts with "Kubernetes" in their na
 ``` 
   $ wavectl show --in-browser alert  --name Kubernetes
   ID               NAME                                                                                     STATUS                              SEVERITY    
-  1523082347619    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
-  1523082347824    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
-  1523082348005    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN
+  1530723441304    Kubernetes - Node Network Utilization - HIGH (Prod)                                      CHECKING                            WARN      
+  1530723441442    Kubernetes - Node Cpu Utilization - HIGH (Prod)                                          CHECKING                            WARN      
+  1530723441589    Kubernetes - Node Memory Swap Utilization - HIGH (Prod)                                  SNOOZED                             WARN
 ```
 
 Similarly, the following views all Metadata dashboards in Wavefront GUI.

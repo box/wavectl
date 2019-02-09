@@ -61,9 +61,12 @@ A short list of common usages. For more details \[Use Cases\]\(#example-use-case
 
 \- \[Repetitive editing of alerts, dashboards\]\(doc/RepetitiveEditing.md\)
 
+\- \[Simple templating of alerts, dashboards with \`wavectl\`\]\(doc/Templating.md\)
+
 \- \[Git integration\]\(doc/GitIntegration.md\)
 
 \- \[Easy configuration of \`wavectl\`\]\(doc/WavectlConfig.md\)
+
 
 
 \#\# \[Command Reference\]\(doc/CommandReference.md\)

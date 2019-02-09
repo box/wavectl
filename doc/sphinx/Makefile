@@ -29,7 +29,11 @@ SPHINX_BUILDEER := text
 all:
 	set -x; \
 	rm -rf "$(BUILDDIR)" &&\
-	PYTHONPATH=$(realpath ../../):$(realpath ../../test) PATH=$(realpath ../)/bin:$(PATH) $(SPHINXBUILD) -M $(SPHINX_BUILDEER) "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) &&\
+	PYTHONPATH=$(realpath ../../):$(realpath ../../test) \
+	HOME=/tmp/Users/someuser \
+	PATH=$(realpath ../)/bin:$(PATH) \
+	$(SPHINXBUILD) -M $(SPHINX_BUILDEER) "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) &&\
+	\
 	for file in \
 		AdvancedGrep \
 		BrowserIntegration \
@@ -37,6 +41,7 @@ all:
 		CommandReference \
 		GitIntegration \
 		RepetitiveEditing \
+		Templating\
 		WavectlConfig \
 	; do  \
 	pandoc $(PANDOC_OPTIONS) $(MAKEFILE_DIR)/_build/$(SPHINX_BUILDEER)/$${file}.txt  -o $(shell dirname $(MAKEFILE_DIR))/$${file}.md; \
