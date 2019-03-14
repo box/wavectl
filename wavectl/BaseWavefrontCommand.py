@@ -210,9 +210,8 @@ class BaseWavefrontCommand(BaseCommand):
 
         for ct in customerTag:
             e = {
-                "key": "tags.customerTags",
-                "value": ct,
-                "matchingMethod": "EXACT"
+                "key": "tagpath",
+                "value": ct
             }
             ql.append(e)
 
